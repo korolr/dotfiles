@@ -1,0 +1,101 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr. Pink?"
+
+Do (select sentence with Mr.):
+  visU
+
+Expect:
+  "WHY AM _I_ MR. PINK?"
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr? Pink?"
+
+Do (select sentence with Mr?):
+  visU
+
+Expect:
+  "WHY AM _I_ MR? Pink?"
+
+###########################################################
+
+Given:
+  "A sentence with Mr. Ms. Dr.. Amazing!"
+
+Do (select sentence with multiple acryonyms):
+  visU
+
+Expect:
+  "A SENTENCE WITH MR. MS. DR.. Amazing!"
+
+###########################################################
+
+Given:
+  "A sentence with an M.D. and a Ph.D.. Amazing!"
+
+Do (select sentence with MD and PhD):
+  visU
+
+Expect:
+  "A SENTENCE WITH AN M.D. AND A PH.D.. Amazing!"
+
+###########################################################
+
+Given:
+  "A sentence with 0.3533, -1.3233, and 23432223.23 meters."
+
+Do (select sentence decimal numbers):
+  visU
+
+Expect:
+  "A SENTENCE WITH 0.3533, -1.3233, AND 23432223.23 METERS."
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (YOU. being interpreted as abbrev):
+  /But now\<Enter>visU
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” BUT NOW, WHAT AM I GOING TO DO WITH ALL THE MEAT I HAVE
+  STORED IN FREEZERS? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################
+
+Given:
+  Though the period `.` glyph/character will terminate a sentence, it
+  doesn’t terminate all sentences. The same glyph is used in
+  abbreviations like ‘M.D.’ for Medical Doctor, for example.
+
+Do (M.D. test):
+  /Doctor\<Enter>visU
+
+Expect:
+  Though the period `.` glyph/character will terminate a sentence, it
+  doesn’t terminate all sentences. THE SAME GLYPH IS USED IN
+  ABBREVIATIONS LIKE ‘M.D.’ FOR MEDICAL DOCTOR, FOR EXAMPLE.
+
+###########################################################
+
+Given:
+  TV's
+  Magnum, P.I. lives at Robin’s Nest, located at 11435 18th Ave., Oahu, HI.
+
+Do (P.I. test):
+  /Nest\<Enter>visU
+
+Expect:
+  TV'S
+  MAGNUM, P.I. LIVES AT ROBIN’S NEST, LOCATED AT 11435 18TH AVE., OAHU, HI.
+

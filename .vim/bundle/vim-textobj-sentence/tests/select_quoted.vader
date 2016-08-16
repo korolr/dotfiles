@@ -1,0 +1,207 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] "Not the children, Aw-haw-haw."
+
+Do (select sentence with double straight trailing quotes):
+  visAX
+
+Expect:
+  TV's Frank [shouts] "Not the children, Aw-haw-haw."X
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] 'Not the children, Aw-haw-haw.'
+
+Do (select sentence with single straight trailing quotes):
+  visAX
+
+Expect:
+  TV's Frank [shouts] 'Not the children, Aw-haw-haw.'X
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] “Not the children, Aw-haw-haw.”
+
+Do (select sentence with curly trailing quotes):
+  visAX
+
+Expect:
+  TV's Frank [shouts] “Not the children, Aw-haw-haw.”X
+
+###########################################################
+
+Given:
+  Scene. "Not the children, Aw-haw-haw," shouted TV's Frank.
+
+Do (select sentence with double straight leading quote):
+  /Not\<Enter>vis\<Esc>`<iX
+
+Expect:
+  Scene. X"Not the children, Aw-haw-haw," shouted TV's Frank.
+
+###########################################################
+
+Given:
+  Scene. 'Not the children, Aw-haw-haw,' shouted TV's Frank.
+
+Do (select sentence with single straight leading quote):
+  /Not\<Enter>vis\<Esc>`<iX
+
+Expect:
+  Scene. X'Not the children, Aw-haw-haw,' shouted TV's Frank.
+
+###########################################################
+
+Given:
+  Scene. ‘Not the children, Aw-haw-haw,’ shouted TV’s Frank.
+
+Do (select sentence with single straight curly quote):
+  /Not\<Enter>vis\<Esc>`<iX
+
+Expect:
+  Scene. X‘Not the children, Aw-haw-haw,’ shouted TV’s Frank.
+
+###########################################################
+
+Given:
+  Scene. “Not the children, Aw-haw-haw,” shouted TV’s Frank.
+
+Do (select sentence with single straight curly quote):
+  /Not\<Enter>vis\<Esc>`<iX
+
+Expect:
+  Scene. X“Not the children, Aw-haw-haw,” shouted TV’s Frank.
+
+###########################################################
+
+Given:
+  I said
+  “No. THANK YOU.”
+
+Do (two sentences within curly quotes, second):
+  vis\<Esc>`>aX
+
+Expect:
+  I said
+  “No.X THANK YOU.”
+
+###########################################################
+
+Given:
+  “I said”
+  No. THANK YOU.
+
+Do (two sentences within curly quotes, first):
+  vis\<Esc>`>aX
+
+Expect:
+  “I said”
+  No.X THANK YOU.
+
+###########################################################
+
+Given:
+  Of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights.
+
+Do (select sentence with earlier double straight quotes):
+  jvisU
+
+Expect:
+  OF THIS SOFTWARE AND ASSOCIATED DOCUMENTATION FILES (THE "SOFTWARE"), TO DEAL
+  IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
+
+###########################################################
+
+Given:
+  Of this software and associated documentation files (the 'Software'), to deal
+  in the Software without restriction, including without limitation the rights.
+
+Do (select sentence with earlier single straight quotes):
+  jvisU
+
+Expect:
+  OF THIS SOFTWARE AND ASSOCIATED DOCUMENTATION FILES (THE 'SOFTWARE'), TO DEAL
+  IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
+
+###########################################################
+
+Given:
+  Of this software and associated documentation files (the “Software”), to deal
+  in the Software without restriction, including without limitation the rights.
+
+Do (select sentence with earlier double curly quotes):
+  jvisU
+
+Expect:
+  OF THIS SOFTWARE AND ASSOCIATED DOCUMENTATION FILES (THE “SOFTWARE”), TO DEAL
+  IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
+
+###########################################################
+
+Given:
+  Of this software and associated documentation files (the ‘Software’), to deal
+  in the Software without restriction, including without limitation the rights.
+
+Do (select sentence with earlier single curly quotes):
+  jvisU
+
+Expect:
+  OF THIS SOFTWARE AND ASSOCIATED DOCUMENTATION FILES (THE ‘SOFTWARE’), TO DEAL
+  IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
+
+###########################################################
+
+Given:
+  G
+  “F.”
+
+Do (Selected typographic double quoted at end of sentence):
+  jlllvisu
+
+Expect:
+  g
+  “f.”
+
+###########################################################
+
+Given:
+  G
+  ‘H.’
+
+Do (Selected typographic single quoted at end of sentence):
+  jlllvisu
+
+Expect:
+  g
+  ‘h.’
+
+###########################################################
+
+Given:
+  Said. ‘TV’s Frank [shouts] “Not the children, Aw-haw-haw.”’
+
+Do (select sentence with compound curly quotes):
+  /TV\<Enter>visU
+
+Expect:
+  Said. ‘TV’S FRANK [SHOUTS] “NOT THE CHILDREN, AW-HAW-HAW.”’
+
+###########################################################
+
+Given:
+  Said. 'TV's Frank [shouts] "Not the children, Aw-haw-haw."'
+
+Do (select sentence with compound straight quotes):
+  /TV\<Enter>visU
+
+Expect:
+  Said. 'TV'S FRANK [SHOUTS] "NOT THE CHILDREN, AW-HAW-HAW."'
+
+###########################################################

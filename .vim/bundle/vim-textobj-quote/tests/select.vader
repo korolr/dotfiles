@@ -1,0 +1,73 @@
+Execute (Clean up test environment):
+  call textobj#quote#init()
+
+###########################################################
+
+Given:
+  ‘It’s “Dr.” Evil, thank you very much.’
+
+Do (select single):
+  viQU
+
+Expect:
+  ‘IT’S “DR.” EVIL, THANK YOU VERY MUCH.’
+
+###########################################################
+
+Given:
+  ‘It’s “Dr.” Evil, thank you very much.’
+
+Do (select after double quotes):
+  /thank\<cr>viQU
+
+Expect:
+  ‘IT’S “DR.” EVIL, THANK YOU VERY MUCH.’
+
+###########################################################
+
+Given:
+  ‘It’s “Dr.” Evil, thank you very much.’
+
+Do (select in double quotes):
+  /Dr\<cr>viqU
+
+Expect:
+  ‘It’s “DR.” Evil, thank you very much.’
+
+###########################################################
+
+Given:
+  “It’s Dr. Evil. I didn’t spend six years in Evil Medical
+  School to be called ‘mister,’ thank you very much.”
+
+Do (select over multiple lines):
+  /thank\<cr>viqU
+
+Expect:
+  “IT’S DR. EVIL. I DIDN’T SPEND SIX YEARS IN EVIL MEDICAL
+  SCHOOL TO BE CALLED ‘MISTER,’ THANK YOU VERY MUCH.”
+
+###########################################################
+
+Given:
+  “It’s Dr. Evil. I didn’t spend six years in ‘Evil Medical
+  School’ to be called ‘mister,’ thank you very much.”
+
+Do (select single over multiple lines):
+  /Medical\<cr>viQU
+
+Expect:
+  “It’s Dr. Evil. I didn’t spend six years in ‘EVIL MEDICAL
+  SCHOOL’ to be called ‘mister,’ thank you very much.”
+
+###########################################################
+
+Given:
+  ‘Really, I’d rather not relive the ’70s,’ said zombie Elvis.
+
+Do (select single over multiple lines):
+  viQU
+
+Expect:
+  ‘REALLY, I’D RATHER NOT RELIVE THE ’70S,’ said zombie Elvis.
+

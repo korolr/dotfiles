@@ -1,0 +1,7 @@
+CurrentLineWhitespaceOff	better-whitespace.txt	/*CurrentLineWhitespaceOff*
+DisableWhitespace	better-whitespace.txt	/*DisableWhitespace*
+EnableWhitespace	better-whitespace.txt	/*EnableWhitespace*
+StripWhitespace	better-whitespace.txt	/*StripWhitespace*
+ToggleStripWhitespaceOnSave	better-whitespace.txt	/*ToggleStripWhitespaceOnSave*
+ToggleWhitespace	better-whitespace.txt	/*ToggleWhitespace*
+better-whitespace.txt	better-whitespace.txt	/*better-whitespace.txt*

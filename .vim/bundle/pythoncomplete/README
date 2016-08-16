@@ -1,0 +1,14 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1542
+
+This is the pythoncomplete omni-completion script shipped with vim 7.  Updated versions will appear here, as the vim tarballs do not ship with updated runtime files.
+
+To use this plugin, make sure ftplugins are enabled, via "filetype plugin on".
+Filetype detection will set the omnifunction appropriately.
+
+Features:
+   Dynamic type deduction (without actually evaluating statements)
+   Local visibility handling (will complete from all parent scopes).
+   completeopt=preview support, displaying python docstrings
+   Function argument completion (whenever possible)
+
+Requires Vim7 compiled with +python support.

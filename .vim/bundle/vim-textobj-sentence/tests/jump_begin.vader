@@ -1,0 +1,107 @@
+###########################################################
+# Tests to jump to beginning of sentences using '(' and ')'
+###########################################################
+
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  TV's Frank: [shouts] Not the children! Aw-haw-haw!
+
+Do (jump to start of next sentence):
+  )viwU
+
+Expect ():
+  TV's Frank: [shouts] Not the children! AW-haw-haw!
+
+###########################################################
+
+Given:
+  We've caulked this, added water, and we've turned it into Water Polo.
+  Woo!
+
+Do (jump to start of second sentence):
+  )rX
+
+Expect:
+  We've caulked this, added water, and we've turned it into Water Polo.
+  Xoo!
+
+###########################################################
+
+Given:
+  TV's Frank: [shouts] Not the children! Aw-haw-haw!
+
+  The other day, my colon looked up at me and said, “Frank, thank you.”
+
+Do (jump to start of third sentence, which is at beginning of line):
+  ))rX
+
+Expect:
+  TV's Frank: [shouts] Not the children! Aw-haw-haw!
+
+  Xhe other day, my colon looked up at me and said, “Frank, thank you.”
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (jump to start of third sentence, which is not at beginning of line):
+  ))rX
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Xoo!
+
+###########################################################
+
+Given:
+  This is a test
+
+  This is a test.
+
+Do (jump to from sentence without terminator well-formed sentence):
+  )rX
+
+Expect:
+  This is a test
+
+  Xhis is a test.
+
+###########################################################
+
+Given:
+  This is a test
+
+  This is a test
+
+Do (jump to from terminator-free sentence to another):
+  )rX
+
+Expect:
+  This is a test
+
+  Xhis is a test
+
+###########################################################
+
+Given:
+  This is a test.
+
+  this is a test
+
+Do (do not jump to well-formed to poorly-formed sentence):
+  )rX
+
+Expect:
+  Xhis is a test.
+
+  this is a test
+
+###########################################################

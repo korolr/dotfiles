@@ -1,0 +1,108 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select inside of first sentence):
+  /rst\<Enter>visrX
+
+Expect:
+  XXXXXXXXXXXXXXX Second sentence. Third sentence.
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select inside of second sentence):
+  /ond\<Enter>visrX
+
+Expect:
+  First sentence. XXXXXXXXXXXXXXXX Third sentence.
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select inside of third sentence):
+  /ird\<Enter>visrX
+
+Expect:
+  First sentence. Second sentence. XXXXXXXXXXXXXXX
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select inside of fourth sentence):
+  /our\<Enter>visrX
+
+Expect:
+  First sentence. Second sentence. Third sentence.
+  XXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select around first sentence):
+  /rst\<Enter>vasrX
+
+Expect:
+  XXXXXXXXXXXXXXXXSecond sentence. Third sentence.
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select around second sentence):
+  /ond\<Enter>vasrX
+
+Expect:
+  First sentence. XXXXXXXXXXXXXXXXXThird sentence.
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select around third sentence):
+  /ird\<Enter>vasrX
+
+Expect:
+  First sentence. Second sentence. XXXXXXXXXXXXXXX
+  Fourth Sentence.
+
+###########################################################
+
+Given:
+  First sentence. Second sentence. Third sentence.
+  Fourth Sentence.
+
+Do (select around fourth sentence):
+  /our\<Enter>vasrX
+
+Expect:
+  First sentence. Second sentence. Third sentence.
+  XXXXXXXXXXXXXXXX
+
+###########################################################

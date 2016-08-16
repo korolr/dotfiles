@@ -1,0 +1,9 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=12
+
+This script uses exuberant ctags to build the list of tags for the current file.  CursorHold event is then used to update titlestring.
+
+Upon sourcing an autocommand is created with event type CursorHold.  It updates the title string using the function GetTagName.  Another autocommand of type BufEnter is created to generate tags for *.c, *.cpp and *.h files.
+
+Function GenerateTags builds an array of tag names.
+
+Function GetTagName takes line number argument and returns the tag name.

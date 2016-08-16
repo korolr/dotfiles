@@ -1,0 +1,67 @@
+###########################################################
+# Jumping in quoted sentences
+###########################################################
+
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (jump three sentences):
+  3)visU
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” BUT NOW, WHAT AM I GOING TO DO WITH ALL THE MEAT I HAVE
+  STORED IN FREEZERS? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (jump four sentences forward and three back):
+  4)3(rX
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” X said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (jump to end of three sentences):
+  3g)rX
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.X But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (from end jump 3 sentences backwards):
+  G$3g(rX
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “NoX Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+

@@ -1,0 +1,5 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1487
+
+Type ":setfiletype htmldjango" from within Vim to select highlighting for Django HTML templates.  If you desire Django template highlighting but not HTML highlighting, type ":setfiletype django" instead.  Items highlighted include template tags, built-in filters, arguments and comments.
+
+(N.B. For Vim 7.1 and later you shouldn't need the additional htmldjango.vim file.)

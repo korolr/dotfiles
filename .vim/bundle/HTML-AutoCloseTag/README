@@ -1,0 +1,6 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2591
+
+Automatically closes HTML tag once you finish typing it with >. It is also smart enough to not autoclose tags when in a comment, when they are self-closing, or when they have already been closed.
+
+So, <body id="foo">, upon typing >, will become <body id="foo">|</body>, where | is the cursor.
+But, if you type <img src="bar.png">, the script knows to keep it the same.

@@ -1,0 +1,238 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select first sentence):
+  visU
+
+Expect:
+  SO WHAT WE'VE DONE IS TAKEN THE WHOLE FOOSBALL CONCEPT, AND
+  UH... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select second sentence):
+  /caulked\<Enter>visU
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT
+  INTO WATER POLO. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select third sentence):
+  /Woo\<Enter>visU
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. WOO!
+
+###########################################################
+
+Given:
+  We've caulked this, added water, and we've turned it into Water Polo. TV's
+  Frank not the children. Aw-haw-haw. The other day, my colon looked up
+  at me and said, “Frank, thank you.”
+
+Do (select line starting with upper):
+  /Frank\<Enter>visu
+
+Expect:
+  We've caulked this, added water, and we've turned it into Water Polo. tv's
+  frank not the children. Aw-haw-haw. The other day, my colon looked up
+  at me and said, “Frank, thank you.”
+
+###########################################################
+
+Given:
+  Frank:
+  We've caulked this, added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (select line ending with colon):
+  visU
+
+Expect:
+  FRANK:
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this—
+  Added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (select sentence with em dash):
+  visU
+
+Expect:
+  WE'VE CAULKED THIS—
+  ADDED WATER, AND WE'VE TURNED IT INTO
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this—
+  Added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (from below, select sentence with em dash):
+  jjvisU
+
+Expect:
+  WE'VE CAULKED THIS—
+  ADDED WATER, AND WE'VE TURNED IT INTO
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this–
+  Added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (from below, select sentence with en dash):
+  jjvisU
+
+Expect:
+  WE'VE CAULKED THIS–
+  ADDED WATER, AND WE'VE TURNED IT INTO
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  The number 12abc34
+  We've caulked this, added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (select line preceded by number):
+  jvisU
+
+Expect:
+  THE NUMBER 12ABC34
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  Frank:
+
+  We've caulked this, added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+Do (select isolated line ending with colon):
+  visU
+
+Expect:
+  FRANK:
+
+  We've caulked this, added water, and we've turned it into
+  Water Polo! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said, Frank, thank you.
+
+Do (comma before upper case):
+  /Frank\<Enter>visU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID, FRANK, THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said-Frank-thank you.
+
+Do (dash before upper case):
+  /Frank\<Enter>visU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID-FRANK-THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said;Frank;thank you.
+
+Do (semi-colon before upper case):
+  /Frank\<Enter>visU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID;FRANK;THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said: Frank, thank you.
+
+Do (colon before upper case):
+  /Frank\<Enter>visU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID: FRANK, THANK YOU.
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select all of first sentence):
+  vasrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXWe've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select all of third sentence):
+  /Woo\<Enter>vasrX
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. XXXX
+
+###########################################################

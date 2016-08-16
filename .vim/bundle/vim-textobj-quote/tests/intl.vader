@@ -1,0 +1,15 @@
+Execute (Clean up test environment):
+  call textobj#quote#init({'educate':1})
+
+###########################################################
+
+Given:
+
+Do (educate with alternative quote characters):
+  :call textobj#quote#init({ 'double':'„“', 'single':'‚‘' })\<Enter>
+  a"Es ist 'Doktor' Böse, ich danke Ihnen sehr."
+
+Expect:
+  „Es ist ‚Doktor‘ Böse, ich danke Ihnen sehr.“
+
+###########################################################

@@ -1,0 +1,47 @@
+Execute (Clean up test environment):
+  call textobj#quote#init({'replace':1})
+  map <silent> ; <Plug>ReplaceWithCurly
+  map <silent> \ <Plug>ReplaceWithStraight
+
+###########################################################
+
+Given:
+  "It's 'Dr.' Evil, thank you very much."
+
+Do (Curl quotes without visual):
+  ;
+
+Expect:
+  “It’s ‘Dr.’ Evil, thank you very much.”
+
+###########################################################
+
+Given:
+  “It’s ‘Dr.’ Evil, thank you very much.”
+
+Do (Clear quotes without Visual):
+  \
+
+Expect:
+  "It's 'Dr.' Evil, thank you very much."
+
+
+Given:
+  "It's 'Dr.' Evil, thank you very much."
+
+Do (Curl quotes with visual):
+  vip;
+
+Expect:
+  “It’s ‘Dr.’ Evil, thank you very much.”
+
+
+Given:
+  “It’s ‘Dr.’ Evil, thank you very much.”
+
+Do (Clear quotes with Visual):
+  vip\
+
+Expect:
+  "It's 'Dr.' Evil, thank you very much."
+

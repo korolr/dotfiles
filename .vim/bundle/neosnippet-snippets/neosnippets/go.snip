@@ -1,0 +1,102 @@
+source go.vim
+
+snippet     helloworld
+abbr        package main\nimport fmt...
+options     head
+  package main
+
+  import (
+    "fmt"
+  )
+
+  func main() {
+    fmt.Printf("Hello, world\n")
+  }
+
+snippet     func
+abbr        func ...() { ... }
+options     head
+  func ${1:fname}(${2}) ${3:int }{
+    ${0:TARGET:return }
+  }
+
+snippet     import
+options     head
+  import (
+    "${1:fmt}"
+  )
+  ${0:TARGET}
+
+snippet     package
+options     head
+  package ${1:main}
+  ${0:TARGET}
+
+snippet     printf
+options     head
+  fmt.Printf("${1}\n"${2:})
+
+snippet     println
+options     head
+  fmt.Println(${0:TARGET})
+
+snippet     struct
+options     head
+  type ${1} struct {
+    ${0:TARGET}
+  }
+
+snippet     interface
+options     head
+  type ${1} interface {
+    ${0:TARGET}
+  }
+
+snippet     for
+options     head
+  for ${1} {
+    ${0:TARGET}
+  }
+
+snippet     range
+abbr        for range
+options     head
+  for ${1:v} := range ${2:#:iterator} {
+    ${0:TARGET}
+  }
+
+snippet     if
+options     head
+    if ${1:#:condition} {
+      ${0:TARGET}
+    }
+
+snippet     iferr
+alias       ife
+options     head
+    if err != nil {
+      return `g:NeosnippetSnippets_Goiferr()`
+    }
+    ${2}
+
+snippet     switch
+abbr        switch {}
+options     head
+  switch ${1:#:v} {
+  case ${2:#:condition}:
+    ${0:TARGET}
+  }
+
+snippet     select
+abbr        select {}
+options     head
+  select {
+  case ${1:#:condition}:
+    ${0:TARGET}
+  }
+
+snippet     case
+options     head
+  case ${1:#:condition}:
+    ${2:TARGET}
+

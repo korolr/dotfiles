@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=386
+
+This script redefines the % motion so that (in addition to its usual behavior)
+it cycles through if/elif/else, try/except/catch, for/continue/break, and
+while/continue/break structures.  The script also
+defines g% to cycle in the opposite direction.  Two other motions, [% and ]%,
+go to the start and end of the current block, respectively.
+
+All of these motions should work in Normal, Visual, and Operator-pending
+modes.  For example, d]% should delete (characterwise) until the end of the
+current block; v]%d should do the same, going through Visual mode so that
+you can see what is being deleted; and V]%d makes it linewise.

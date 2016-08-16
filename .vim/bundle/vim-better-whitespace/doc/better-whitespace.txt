@@ -1,0 +1,65 @@
+*better-whitespace.txt*      better-whitespace
+
+
+This plugin causes all trailing whitespace characters (spaces and tabs) to be
+highlighted. Whitespace for the current line will not be highlighted while in
+insert mode. It is possible to disable current line highlighting while in other
+modes as well (see options below).
+
+To blacklist certain filetypes, set 'g:better_whitespace_filetypes_blacklist'
+to a list of the desired filetypes.
+
+
+                                                *ToggleWhitespace*
+
+Call :ToggleWhitespace to toggle whitespace highlighting on/off.
+
+                                                *EnableWhitespace*
+
+To enable whitespace highlighting, call :EnableWhitespace. This will enable
+highlighting of extraneous whitespace for the entire file.
+
+                                                *DisableWhitespace*
+
+To disable whitespace highlighting, call :DisableWhitespace. This will disable
+highlighting of extraneous whitespace for the entire file.
+
+                                                *StripWhitespace*
+
+To remove extra whitespace, just call :StripWhitespace.By default this
+operates on the entire file. To restrict the portion of the file that it
+cleans, either give it a range or select a group of lines in visual mode
+and then execute it.
+
+                                                *ToggleStripWhitespaceOnSave*
+
+This enables/disables stripping of extra whitespace on file save.
+
+                                                *CurrentLineWhitespaceOff*
+
+Calling :CurrentLineWhitespaceOff with the option either 'hard' or 'soft' will
+disable whitespace highlighting for the currentline.
+
+If 'hard' option is used, then all highlighting remains the same except that
+the current line is not highlighted.
+WARNING: Since this uses CursorMoved events to prevent highlighting of the
+current line there is a chance this can cause a significant slow down of Vim,
+especially with regard to large files.
+
+If the 'soft' option is used, then highlighting will have a lower priority
+potentially causing this highlighting to be overwritten by other, higher
+priority highlighting.  The benefit is that there should be no slowdown with
+this option.
+
+                                                *CurrentLineWhitespaceOn
+
+Call :CurrentLineWhitespaceOn to enable whitespace highlighting for the current
+line. Highlighting is still disabled for the current line while in inserte mode.
+
+Repository exists at: http://github.com/ntpeters/vim-better-whitespace
+
+Originally inspired by: https://github.com/bronson/vim-trailing-whitespace
+
+Based on:
+http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
+http://vim.wikia.com/wiki/Highlight_unwanted_spaces

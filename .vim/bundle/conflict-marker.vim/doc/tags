@@ -1,0 +1,9 @@
+conflict-marker.txt	conflict-marker.txt	/*conflict-marker.txt*
+conflict-marker.vim	conflict-marker.txt	/*conflict-marker.vim*
+conflict-marker.vim-contents	conflict-marker.txt	/*conflict-marker.vim-contents*
+conflict-marker.vim-introduction	conflict-marker.txt	/*conflict-marker.vim-introduction*
+conflict-marker.vim-license	conflict-marker.txt	/*conflict-marker.vim-license*
+conflict-marker.vim-mappings	conflict-marker.txt	/*conflict-marker.vim-mappings*
+conflict-marker.vim-repository-page	conflict-marker.txt	/*conflict-marker.vim-repository-page*
+conflict-marker.vim-usage	conflict-marker.txt	/*conflict-marker.vim-usage*
+conflict-marker.vim-variables	conflict-marker.txt	/*conflict-marker.vim-variables*

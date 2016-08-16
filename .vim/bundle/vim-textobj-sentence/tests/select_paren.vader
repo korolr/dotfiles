@@ -1,0 +1,87 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  (TV's Frank [shouts] "Not the children, Aw-haw-haw".)
+
+Do (select traditional parenthesized sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  (TV's Frank [shouts] "Not the children, Aw-haw-haw.")
+
+Do (select traditional parenthesized sentence, with quotes):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  (TV's Frank [shouts] "Not the children, Aw-haw-haw").
+
+Do (select nouveau parenthesized sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  ((TV's Frank [shouts])
+  "Not the children, Aw-haw-haw.")
+
+Do (select double paren, on two lines, from first line):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  ((TV's Frank [shouts])
+  "Not the children, Aw-haw-haw.")
+
+Do (select double paren, on two lines, with close, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  (TV's Frank [shouts](
+  "Not the children, Aw-haw-haw."))
+
+Do (select double paren, on two lines, with open, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  It was five in the morning (5 A.M. to be specific.)
+
+Do (abbreviation in parens):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################

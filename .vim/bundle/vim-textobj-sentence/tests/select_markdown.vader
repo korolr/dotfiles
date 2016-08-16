@@ -1,0 +1,192 @@
+Execute (Clean up test environment):
+  call textobj#sentence#init()
+
+###########################################################
+
+Given:
+  _TV's Frank _shouts_ "Not the children, Aw-haw-haw"._
+
+Do (select traditional _markdown_ sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  _TV's Frank _shouts_ "Not the children, Aw-haw-haw."_
+
+Do (select traditional _markdown_ sentence, with quotes):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  __TV's Frank _shouts_ "Not the children, Aw-haw-haw."__
+
+Do (select traditional __markdown__ sentence, with quotes):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  _TV's Frank _shouts_ "Not the children, Aw-haw-haw"_.
+
+Do (select nouveau _markdown_ sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  __TV's Frank _shouts__
+  "Not the children, Aw-haw-haw."_
+
+Do (select double _markdown_, on two lines, from first line):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  __TV's Frank _shouts__
+  "Not the children, Aw-haw-haw."_
+
+Do (select double _markdown_, on two lines, with close, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  _TV's Frank _shouts__
+  "Not the children, Aw-haw-haw."__
+
+Do (select double _markdown_, on two lines, with open, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  It was five in the morning _5 A.M. to be specific._
+
+Do (abbreviation in _markdown_s):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  *TV's Frank *shouts* "Not the children, Aw-haw-haw".*
+
+Do (select traditional *markdown* sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  *TV's Frank *shouts* "Not the children, Aw-haw-haw."*
+
+Do (select traditional *markdown* sentence, with quotes):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  **TV's Frank *shouts* "Not the children, Aw-haw-haw."**
+
+Do (select traditional **markdown** sentence, with quotes):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  *TV's Frank *shouts* "Not the children, Aw-haw-haw"*.
+
+Do (select nouveau *markdown* sentence):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  **TV's Frank *shouts**
+  "Not the children, Aw-haw-haw."*
+
+Do (select double *markdown*, on two lines, from first line):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  **TV's Frank *shouts**
+  "Not the children, Aw-haw-haw."*
+
+Do (select double *markdown*, on two lines, with close, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  *TV's Frank *shouts**
+  "Not the children, Aw-haw-haw."**
+
+Do (select double *markdown*, on two lines, with open, from second line):
+  jvisrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
+
+Given:
+  It was five in the morning *5 A.M. to be specific.*
+
+Do (abbreviation in *markdown*):
+  visrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+###########################################################
