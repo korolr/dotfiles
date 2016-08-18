@@ -1227,6 +1227,9 @@
 " }
 
 filetype plugin on
+set ignorecase
+set cursorcolumn
+
 
 :let loaded_matchparen = 0
 Bundle 'vim-scripts/tComment'
