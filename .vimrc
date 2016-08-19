@@ -1229,17 +1229,17 @@
 filetype plugin on
 set ignorecase
 set cursorcolumn
-
-
+set omnifunc=syntaxcomplete#Complete
 :let loaded_matchparen = 0
+set gfn=Menlo:h15
+map <F3> :NERDTree<CR>
+
 Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kopischke/vim-stay'
 Bundle 'mhinz/vim-startify'
 Bundle 'myshov/xkbswitch-macosx'
-
-set omnifunc=syntaxcomplete#Complete
 Bundle 'majutsushi/tagbar'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'severin-lemaignan/vim-minimap'
@@ -1251,5 +1251,3 @@ Bundle 'vim-scripts/django.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
 Bundle 'mattn/emmet-vim'
 Bundle 'ntpeters/vim-better-whitespace'
-set gfn=Menlo:h15
-map <F3> :NERDTree<CR>
