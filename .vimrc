@@ -1233,6 +1233,8 @@ set omnifunc=syntaxcomplete#Complete
 :let loaded_matchparen = 0
 set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
+map <F4> :Tagbar<CR>
+
 
 Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/FuzzyFinder'
