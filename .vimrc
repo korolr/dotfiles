@@ -1225,31 +1225,36 @@
         endif
     endif
 " }
-
+set nospell
+set cursorline
+set nocursorcolumn
 filetype plugin on
+:let w:persistent_cursorline = 0
+
 set ignorecase
-set cursorcolumn
 set omnifunc=syntaxcomplete#Complete
 :let loaded_matchparen = 0
 set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
-map <F4> :Tagbar<CR>
-
+let g:jsx_ext_required = 1
 
 Bundle 'vim-scripts/tComment'
-Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'kien/ctrlp.vim'
+""Bundle 'vim-scripts/FuzzyFinder'
+""Bundle 'kien/ctrlp.vim'
 Bundle 'kopischke/vim-stay'
 Bundle 'mhinz/vim-startify'
 Bundle 'myshov/xkbswitch-macosx'
-Bundle 'majutsushi/tagbar'
-Bundle 'othree/javascript-libraries-syntax.vim'
+""Bundle 'majutsushi/tagbar'
+""Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'severin-lemaignan/vim-minimap'
-Bundle 'othree/javascript-libraries-syntax.vim'
+""Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'vim-scripts/ctags.vim'
-Bundle 'wincent/terminus'
-Bundle 'wincent/terminus'
+""Bundle 'wincent/terminus'
+""Bundle 'wincent/terminus'
 Bundle 'vim-scripts/django.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
-Bundle 'mattn/emmet-vim'
+""Bundle 'mattn/emmet-vim'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'mxw/vim-jsx'
+""Bundle 'pangloss/vim-javascript'
+Plugin 'posva/vim-vue'
