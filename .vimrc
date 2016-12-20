@@ -19,12 +19,6 @@
         endfunction
     " }
 
-    " Basics {
-        set nocompatible        " Must be first line
-        if !WINDOWS()
-            set shell=/bin/sh
-        endif
-    " }
 
     " Windows Compatible {
         " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
@@ -1238,12 +1232,12 @@ set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
 let g:jsx_ext_required = 1
 
-Bundle 'vim-scripts/tComment'
+"Bundle 'vim-scripts/tComment'
 Bundle 'kopischke/vim-stay'
 Bundle 'mhinz/vim-startify'
-Bundle 'myshov/xkbswitch-macosx'
+"Bundle 'myshov/xkbswitch-macosx'
 Bundle 'severin-lemaignan/vim-minimap'
 Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/django.vim'
+"Bundle 'vim-scripts/django.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
-Bundle 'ntpeters/vim-better-whitespace'
+"Bundle 'ntpeters/vim-better-whitespace'
