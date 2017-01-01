@@ -1232,12 +1232,8 @@ set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
 let g:jsx_ext_required = 1
 
-"Bundle 'vim-scripts/tComment'
 Bundle 'kopischke/vim-stay'
 Bundle 'mhinz/vim-startify'
-"Bundle 'myshov/xkbswitch-macosx'
 Bundle 'severin-lemaignan/vim-minimap'
 Bundle 'vim-scripts/ctags.vim'
-"Bundle 'vim-scripts/django.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
-"Bundle 'ntpeters/vim-better-whitespace'
