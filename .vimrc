@@ -1205,3 +1205,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'severin-lemaignan/vim-minimap'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
+Plugin 'fatih/vim-go'
+let g:neocomplete#force_overwrite_completefunc     
+let g:neocomplete#enable_smart_case                
+let g:neocomplete#auto_completion_start_length    
