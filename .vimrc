@@ -1200,12 +1200,24 @@ set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
 let g:jsx_ext_required = 1
 
+Bundle 'vim-scripts/tComment'
+""Bundle 'vim-scripts/FuzzyFinder'
+""Bundle 'kien/ctrlp.vim'
 Bundle 'kopischke/vim-stay'
 Bundle 'mhinz/vim-startify'
+Bundle 'myshov/xkbswitch-macosx'
+""Bundle 'majutsushi/tagbar'
+""Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'severin-lemaignan/vim-minimap'
+""Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'vim-scripts/ctags.vim'
+""Bundle 'wincent/terminus'
+""Bundle 'wincent/terminus'
+Bundle 'vim-scripts/django.vim'
 Bundle 'powerman/vim-plugin-ruscmd'
-Plugin 'fatih/vim-go'
-let g:neocomplete#force_overwrite_completefunc     
-let g:neocomplete#enable_smart_case                
-let g:neocomplete#auto_completion_start_length    
+""Bundle 'mattn/emmet-vim'
+Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'mxw/vim-jsx'
+""Bundle 'pangloss/vim-javascript'
+Bundle 'posva/vim-vue'
+Bundle 'fatih/vim-go'
