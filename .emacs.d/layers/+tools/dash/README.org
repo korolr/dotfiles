@@ -1,0 +1,70 @@
+#+TITLE: Dash layer
+
+[[file:img/dash.png]]
+
+[[file:img/zeal.png]]
+
+* Table of Contents                                         :TOC_4_gh:noexport:
+ - [[#description][Description]]
+ - [[#install][Install]]
+   - [[#dash-os-x][Dash (OS X)]]
+   - [[#zeal-linux--windows][Zeal (Linux & Windows)]]
+   - [[#check-documentation-for-x-at-point][Check Documentation for x-at-point]]
+ - [[#key-bindings][Key bindings]]
+   - [[#helm-dash-and-counsel-dash][helm-dash and counsel-dash]]
+
+* Description
+- [[http://kapeli.com/dash][dash]] :: Is a great tool for quick access to various sets of documentation,
+          only available in OS X.
+
+- [[https://github.com/stanaka/dash-at-point][dash-at-point]] :: Is the package used to integrate =dash= in Emacs. It will try
+                   to intelligently guess specific docsets to use based off of
+                   your current mode.
+
+- [[http://zealdocs.org/][zeal]] :: Zeal is an offline documentation browser inspired by Dash,
+          available for Linux and Windows.
+
+- [[https://github.com/jinzhu/zeal-at-point][zeal-at-point]] :: Run zeal-at-point to search the word at point (or string in
+                   region), then Zeal is launched and search the word. Use
+                   prefix argument C-u to edit the search string first.
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =dash= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+** Dash (OS X)
+
+You have to install [[http://kapeli.com/dash][dash]] on your machine.
+
+It is recommended to set the =HUD mode= in your Dash application preferences
+when using this layer.
+
+** Zeal (Linux & Windows)
+
+You have to install [[http://zealdocs.org/][zeal]] on your machine.
+
+Then install the docsets you use more frequently
+
+** Check Documentation for x-at-point
+
+See the documentation [[https://github.com/stanaka/dash-at-point#Usage][dash-at-point-usage]] , or [[https://github.com/jinzhu/zeal-at-point][zeal-at-point]] for more
+information on customizing specific docsets for modes.
+
+* Key bindings
+
+| Key Binding | Description                                                     |
+|-------------+-----------------------------------------------------------------|
+| ~SPC d d~   | Lookup thing at point in Dash or Zeal                           |
+| ~SPC d D~   | Lookup thing at point in Dash or Zeal within a specified Docset |
+| ~SPC d h~   | Lookup thing at point in helm-dash or counsel-dash              |
+| ~SPC d H~   | Lookup in helm-dash or counsel-dash within a specified Docset   |
+
+** helm-dash and counsel-dash
+=dash-at-point= is linked to the GUI app and is only available for OSX. On
+linux, you can use =zeal-at-point= which is linked to the GUI app too, but it's
+open source.
+
+Or you can use [[https://github.com/areina/helm-dash][helm-dash]] when using =helm= and [[https://github.com/nathankot/counsel-dash][counsel-dash]] when using =ivy=,
+which requires no additional application. You can use
+=dash/helm-dash-docset-newpath= to set the location path of your docsets.

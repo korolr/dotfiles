@@ -1,0 +1,73 @@
+#+TITLE: Emacs Lisp layer
+
+[[file:img/emacs.png]]
+
+* Table of Contents                                         :TOC_4_gh:noexport:
+ - [[#description][Description]]
+ - [[#install][Install]]
+ - [[#auto-compile][Auto-compile]]
+ - [[#key-bindings][Key bindings]]
+   - [[#working-with-lisp-files-barfage-slurpage--more][Working with lisp files (barfage, slurpage & more)]]
+   - [[#leader][Leader]]
+   - [[#srefactor][srefactor]]
+
+* Description
+This layer gathers all the configuration related to emacs-lisp. This should
+always be in your dotfile, it is not recommended to uninstall it.
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =emacs-lisp= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+* Auto-compile
+This layer adds the [[https://github.com/tarsius/auto-compile][auto-compile]] package to automatically keep the byte-compiled
+version of your Emacs lisp files synced with the uncompiled version on every
+save. If there are any compiler errors in the file, you will see a counter show
+up in the mode line. You can hover over these numbers to get a description or
+view the compiler output with the ~SPC m c l~ key binding. To disable the
+feature use this line in your =dotspacemacs/user-config= function.
+
+#+BEGIN_SRC emacs-lisp
+  (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
+#+END_SRC
+
+You can also exclude the =auto-compile= package.
+
+* Key bindings
+** Working with lisp files (barfage, slurpage & more)
+Spacemacs comes with a special ~lisp-state~ for working with lisp code that
+supports slurpage, barfage and more tools you'll likely want when working with
+lisp.
+
+As this state works the same for all files, the documentation is in global
+[[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings][DOCUMENTATION.org]]. In general, use ~SPC k~ to interact with the lisp-state.
+
+** Leader
+
+| Key Binding                | Description                                                |
+|----------------------------+------------------------------------------------------------|
+| ~SPC m g g~                | go to definition of symbol under point                     |
+| ~SPC m h h~                | describe symbol at point                                   |
+| ~SPC m c c~                | byte compile the current file                              |
+| ~SPC m c l~                | popup compile-log buffer                                   |
+| ~SPC m e $~ or ~SPC m e l~ | go to end of current line and evaluate                     |
+| ~SPC m e b~                | evaluate current buffer                                    |
+| ~SPC m e c~                | evaluate current form (start with =defun=, =setq=, etc...) |
+| ~SPC m e e~                | evaluate sexp before point                                 |
+| ~SPC m e r~                | evaluate current region                                    |
+| ~SPC m e f~                | evaluation current function                                |
+| ~SPC m ​,​~                  | toggle =lisp state=                                        |
+| ~SPC m t b~                | run tests of current buffer                                |
+| ~SPC m t q~                | run =ert=                                                  |
+| ~SPC m d m~                | open [[https://github.com/joddie/macrostep][macrostep]] transient-state                             |
+
+** srefactor
+The [[file:../../semantic/README.org][semantic]] layer should be installed for these key bindings to become active.
+
+| Key Binding | Description             |
+|-------------+-------------------------|
+| ~SPC m = b~ | format current buffer   |
+| ~SPC m = f~ | format current function |
+| ~SPC m = o~ | format all on one line  |
+| ~SPC m = s~ | format current sexp     |

@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+anaconda_mode.py
+setup.cfg
+setup.py
+anaconda_mode.egg-info/PKG-INFO
+anaconda_mode.egg-info/SOURCES.txt
+anaconda_mode.egg-info/dependency_links.txt
+anaconda_mode.egg-info/not-zip-safe
+anaconda_mode.egg-info/requires.txt
+anaconda_mode.egg-info/top_level.txt

@@ -1,0 +1,109 @@
+#+TITLE: Common Lisp layer
+
+[[file:img/slime.png]]
+
+* Table of Contents                                         :TOC_4_gh:noexport:
+ - [[#description][Description]]
+ - [[#install][Install]]
+ - [[#key-bindings][Key Bindings]]
+   - [[#working-with-lisp-files-barfage-slurpage--more][Working with lisp files (barfage, slurpage & more)]]
+   - [[#leader][Leader]]
+     - [[#help][Help]]
+     - [[#evaluation][Evaluation]]
+     - [[#repl][REPL]]
+     - [[#compile][Compile]]
+     - [[#navigation][Navigation]]
+     - [[#macroexpansion][Macroexpansion]]
+
+* Description
+A Spacemacs contribution layer providing Common Lisp support via [[https://github.com/slime/slime][SLIME]].
+
+* Install
+If you have previously installed slime in any other way, it is recommended that
+you uninstall it before proceeding. You should clean up any config files tied to
+slime that are left behind as well. Linux users can just purge the slime package
+if it was a distribution install.
+
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =common-lisp= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+This layer defaults to using [[http://www.sbcl.org/][sbcl]]. If you want to use a different implementation
+of Common Lisp, you can specify it in your =~/.spacemacs=
+
+#+BEGIN_SRC emacs-lisp
+  (defun dotspacemacs/user-config ()
+    (setq inferior-lisp-program "/path/to/your/lisp"))
+#+END_SRC
+
+* Key Bindings
+** Working with lisp files (barfage, slurpage & more)
+Spacemacs comes with a special ~lisp-state~ for working with lisp code that
+supports slurpage, barfage and more tools you'll likely want when working with
+lisp.
+
+As this state works the same for all files, the documentation is in global
+[[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings][DOCUMENTATION.org]]. In general, use ~SPC k~ to interact with the lisp-state.
+
+** Leader
+*** Help
+
+| Key Binding | Description                                             |
+|-------------+---------------------------------------------------------|
+| ~SPC m h a~ | SLIME apropos                                           |
+| ~SPC m h d~ | Disassemble symbol at point                             |
+| ~SPC m h h~ | Describe symbol at point                                |
+| ~SPC m h H~ | Hyperspec lookup symbol at point                        |
+| ~SPC m h p~ | Browse apropos results for a package's exported symbols |
+| ~SPC m h t~ | Toggle tracing of the function at point                 |
+| ~SPC m h T~ | Untrace all functions                                   |
+| ~SPC m h <~ | Show all known callers                                  |
+| ~SPC m h >~ | Show all known callees                                  |
+| ~SPC m h m~ | Show all usages of a macro                              |
+| ~SPC m h r~ | Show references to global variable                      |
+| ~SPC m h s~ | Show all methods specialized on a class                 |
+
+*** Evaluation
+
+| Key Binding | Description                     |
+|-------------+---------------------------------|
+| ~SPC m e b~ | Evaluate buffer                 |
+| ~SPC m e e~ | Evaluate last expression        |
+| ~SPC m e f~ | Evaluate top level s-expression |
+| ~SPC m e F~ | Undefine the function at point  |
+| ~SPC m e r~ | Evaluate region                 |
+
+*** REPL
+
+| Key Binding | Description                      |
+|-------------+----------------------------------|
+| ~SPC m s i~ | Start an inferior process        |
+| ~SPC m s e~ | Evaluate last expression in REPL |
+| ~SPC m s q~ | Quit                             |
+
+*** Compile
+
+| Key Binding | Description              |
+|-------------+--------------------------|
+| ~SPC m c c~ | Compile file             |
+| ~SPC m c C~ | Compile file and load it |
+| ~SPC m c l~ | Load file                |
+| ~SPC m c n~ | Remove compilation notes |
+| ~SPC m c f~ | Compile function         |
+| ~SPC m c r~ | Compile region           |
+
+*** Navigation
+
+| Key Binding               | Description        |
+|---------------------------+--------------------|
+| ~SPC m g g~               | Inspect definition |
+| ~SPC m g b~               | Go back            |
+| ~SPC m g n~               | Next note          |
+| ~SPC m g N~ or ~SPC m g p | Previous note      |
+
+*** Macroexpansion
+
+| Key Binding | Description                                   |
+|-------------+-----------------------------------------------|
+| ~SPC m m a~ | Macroexpand the expression at point completly |
+| ~SPC m m o~ | Macroexpand the expression at point once      |

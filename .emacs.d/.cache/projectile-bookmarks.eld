@@ -1,0 +1,1 @@
+("~/Desktop/python/flask-skeleton/" "~/Desktop/python/Django-blog-bootstrap/" "~/.emacs.d/")
