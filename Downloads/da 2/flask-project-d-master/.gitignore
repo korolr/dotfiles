@@ -1,0 +1,12 @@
+.env
+env
+venv
+__pycache__
+
+*.pyc
+*.coverage
+.DS_Store
+env.sh
+migrations
+myvenv
+.idea

@@ -1,0 +1,54 @@
+<div class="banner">
+	<div class="container">
+		<div class="header">
+			<div class="logo">
+				<a href="/"><img src="{{url_for('static', filename='images/logo.png')}}" class="img-responsive" alt="" /></a>
+			</div>
+			<div class="header-right">
+				<ul>
+					<li><a href="https://twitter.com/korolr22"><i class="twt"> </i></a></li>
+				<li>
+				<div class="search2">
+					<form method="get">
+						<input name="q" type="text" value="Поиск.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">
+						<input type="submit" value="">
+					</form>
+				</div></li>
+					<div class="clearfix"></div>
+				</ul>
+
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+				<div class="head-nav">
+					<span class="menu"> </span>
+						<ul class="cl-effect-15">
+                        {% if names %}
+						<li ><a href="/">Домой</a></li>
+                        {% else %}
+                        <li class="active"><a href="/">Домой</a></li>
+                        {% endif %}
+
+						    <li {% if names == "Лекции" %} class="active"{% endif %}><a href="/cat/lek" >Лекции</a></li>
+							<li {% if names == "Практические" %} class="active"{% endif %}><a href="/cat/prakt" >Практические</a></li>
+							<li {% if names == "Курсовая работа" %} class="active"{% endif %}><a href="/cat/curs" >Курсовая работа</a></li>
+                            {% if current_user.is_authenticated %}
+            <li data-hover="Выход" ><a href="{{ url_for('user.logout') }}">Выход</a></li>
+          {% else %}
+            <li data-hover="Вход"><a href="{{ url_for('user.login') }}">Вход</a></li>
+          {% endif %}
+								<div class="clearfix"> </div>
+						</ul>
+				</div>
+
+						<!-- script-for-nav -->
+					<script>
+						$( "span.menu" ).click(function() {
+						  $( ".head-nav ul" ).slideToggle(300, function() {
+							// Animation complete.
+						  });
+						});
+					</script>
+				<!-- script-for-nav -->
+	</div>
+</div>
