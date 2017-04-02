@@ -1,13 +1,5 @@
-" Modeline and Notes {
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
-"
-"       http://www.apache.org/licenses/LICENSE-2.0
-"
-" }
 
-" Environment {
 
-    " Identify platform {
         silent function! OSX()
             return has('macunix')
         endfunction
@@ -17,7 +9,7 @@
         silent function! WINDOWS()
             return  (has('win32') || has('win64'))
         endfunction
-    " }
+
 
 
     " Windows Compatible {
@@ -1187,12 +1179,12 @@
         endif
     endif
 " }
+
 set nospell
 set cursorline
 set nocursorcolumn
 filetype plugin on
 :let w:persistent_cursorline = 0
-
 set ignorecase
 set omnifunc=syntaxcomplete#Complete
 :let loaded_matchparen = 0
