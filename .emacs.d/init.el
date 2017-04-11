@@ -12,8 +12,6 @@
 ;; Without this comment emacs25 adds (package-initialize) here
 ;; (package-initialize)
 
-;; Increase gc-cons-threshold, depending on your system you may set it back to a
-;; lower value in your dotfile (function `dotspacemacs/user-config')
 (setq gc-cons-threshold 100000000)
 
 (defconst spacemacs-version          "0.200.7" "Spacemacs version.")
