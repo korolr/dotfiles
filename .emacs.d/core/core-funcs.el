@@ -1,6 +1,6 @@
 ;;; core-funcs.el --- Spacemacs Core File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -34,14 +34,6 @@
   "Runs `text-mode-hook'. Useful for modes that don't derive from
 `text-mode' but should."
   (run-hooks 'text-mode-hook))
-
-(defun spacemacs//get-package-directory (pkg)
-  "Return the directory of PKG. Return nil if not found."
-  (let ((elpa-dir (file-name-as-directory package-user-dir)))
-    (when (file-exists-p elpa-dir)
-      (let* ((pkg-match (concat "\\`" (symbol-name pkg) "-[0-9]+"))
-             (dir (car (directory-files elpa-dir 'full pkg-match))))
-        (when dir (file-name-as-directory dir))))))
 
 (defun spacemacs/mplist-get (plist prop)
   "Get the values associated to PROP in PLIST, a modified plist.
@@ -301,6 +293,15 @@ buffer."
   (let ((message-log-max nil))
     (apply 'message msg args)))
 
+(defun spacemacs/derived-mode-p (mode &rest modes)
+  "Non-nil if MODE is derived from one of MODES."
+  ;; We could have copied the built-in `derived-mode-p' and modified it a bit so
+  ;; it works on arbitrary modes instead of only the current major-mode. We
+  ;; don't do that because then we will need to modify the function if
+  ;; `derived-mode-p' changes.
+  (let ((major-mode mode))
+    (apply #'derived-mode-p modes)))
+
 (defun spacemacs/alternate-buffer (&optional window)
   "Switch back and forth between current and last buffer in the
 current window."
@@ -318,6 +319,16 @@ current window."
                      (mapcar #'car (window-prev-buffers window)))
          ;; `other-buffer' honors `buffer-predicate' so no need to filter
          (other-buffer current-buffer t)))))
+
+(defun spacemacs/alternate-window ()
+  "Switch back and forth between current and last window in the
+current frame."
+  (interactive)
+  (let (;; switch to first window previously shown in this frame
+        (prev-window (get-mru-window nil t t)))
+    ;; Check window was not found successfully
+    (unless prev-window (user-error "Last window not found."))
+    (select-window prev-window)))
 
 (defun spacemacs/comint-clear-buffer ()
   (interactive)

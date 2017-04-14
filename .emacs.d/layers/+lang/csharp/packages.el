@@ -1,6 +1,6 @@
 ;;; packages.el --- csharp Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -33,7 +33,7 @@
         (setq omnisharp-auto-complete-want-documentation nil))
       (push 'company-omnisharp company-backends-csharp-mode)
       (add-to-list 'spacemacs-jump-handlers-csharp-mode
-                'omnisharp-go-to-definition))
+                   '(omnisharp-go-to-definition :async t)))
     :config
     (progn
       (spacemacs/declare-prefix-for-mode 'csharp-mode "mc" "csharp/compile")

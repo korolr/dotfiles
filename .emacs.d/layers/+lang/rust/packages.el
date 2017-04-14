@@ -1,6 +1,6 @@
 ;;; packages.el --- Rust Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Chris Hoeppner <me@mkaito.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -65,7 +65,8 @@
     :init
     (progn
       (spacemacs/set-leader-keys-for-major-mode 'rust-mode
-        "=" 'rust-format-buffer))))
+        "=" 'rust-format-buffer
+        "q" 'spacemacs/rust-quick-run))))
 
 (defun rust/init-toml-mode ()
   (use-package toml-mode
@@ -88,10 +89,17 @@
     (exec-path-from-shell-copy-env "RUST_SRC_PATH"))
 
   (use-package racer
-    :diminish racer-mode
     :defer t
     :init
     (progn
       (spacemacs/add-to-hook 'rust-mode-hook '(racer-mode eldoc-mode))
       (spacemacs/declare-prefix-for-mode 'rust-mode "mg" "goto")
-      (add-to-list 'spacemacs-jump-handlers-rust-mode 'racer-find-definition))))
+      (add-to-list 'spacemacs-jump-handlers-rust-mode 'racer-find-definition)
+      (spacemacs/declare-prefix-for-mode 'rust-mode "mh" "help")
+      (spacemacs/set-leader-keys-for-major-mode 'rust-mode
+        "hh" 'spacemacs/racer-describe))
+    :config
+    (progn
+      (spacemacs|hide-lighter racer-mode)
+      (evilified-state-evilify-map racer-help-mode-map
+        :mode racer-help-mode))))

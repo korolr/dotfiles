@@ -1,6 +1,6 @@
 ;;; packages.el --- Java Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Lukasz Klich <klich.lukasz@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -30,13 +30,13 @@
 (defun java/init-eclim ()
   (use-package eclim
     :defer t
-    :diminish eclim-mode
     :init
     (progn
       (add-hook 'java-mode-hook 'eclim-mode)
       (add-to-list 'spacemacs-jump-handlers-java-mode 'eclim-java-find-declaration))
     :config
     (progn
+      (spacemacs|hide-lighter eclim-mode)
       (require 'eclimd)
       (setq help-at-pt-display-when-idle t
             help-at-pt-timer-delay 0.1)

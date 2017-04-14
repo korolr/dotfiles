@@ -1,6 +1,6 @@
 ;;; config.el --- Spacemacs Base Layer configuration File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -18,6 +18,7 @@
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
+(add-to-list 'global-auto-revert-ignore-modes 'Buffer-menu-mode)
 
 ;; Make dired "guess" target directory for some operations, like copy to
 ;; directory visited in other split buffer.
@@ -134,9 +135,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     ;; but IS available during the subsequent config reloads
     (if (fboundp 'spacemacs/toggle-fullscreen-frame-on)
         (spacemacs/toggle-fullscreen-frame-on)
-      (spacemacs/toggle-frame-fullscreen))
-  (if dotspacemacs-maximized-at-startup
-      (add-hook 'window-setup-hook 'toggle-frame-maximized)))
+      (spacemacs/toggle-frame-fullscreen)))
 
 (setq ns-use-native-fullscreen (not dotspacemacs-fullscreen-use-non-native))
 

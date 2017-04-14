@@ -1,6 +1,6 @@
 ;;; packages.el --- Agda2 Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Oliver Charles <ollie@ocharles.org.uk>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -83,7 +83,7 @@
           "xq"  'agda2-quit
           "xr"  'agda2-restart)))))
 
-(defun idris/pre-init-golden-ratio ()
+(defun agda/pre-init-golden-ratio ()
   (spacemacs|use-package-add-hook golden-ratio
     :post-config
     (add-to-list 'golden-ratio-exclude-buffer-names

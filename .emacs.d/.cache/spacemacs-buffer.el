@@ -1,2 +1,2 @@
 
-(setq spacemacs-buffer--release-note-version (quote "0.200.7"))
+(setq spacemacs-buffer--release-note-version (quote "0.200.9"))

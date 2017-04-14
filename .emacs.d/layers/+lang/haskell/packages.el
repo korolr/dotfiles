@@ -1,6 +1,6 @@
 ;;; packages.el --- Haskell Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -188,11 +188,10 @@
         "b" 'haskell-debug/break-on-function
         "c" 'haskell-debug/continue
         "d" 'haskell-debug/delete
-        "n" 'haskell-debug/next
-        "N" 'haskell-debug/previous
-        "p" 'haskell-debug/previous
+        "i" 'haskell-debug/step
+        "s" 'haskell-debug/next
+        "S" 'haskell-debug/previous
         "r" 'haskell-debug/refresh
-        "s" 'haskell-debug/step
         "t" 'haskell-debug/trace)
 
       ;; configure C-c C-l so it doesn't throw any errors
@@ -252,8 +251,9 @@
 (defun haskell/init-haskell-snippets ()
   ;; manually load the package since the current implementation is not lazy
   ;; loading friendly (funny coming from the haskell mode :-))
-  (setq haskell-snippets-dir (spacemacs//get-package-directory
-                              'haskell-snippets))
+  (setq haskell-snippets-dir
+        (configuration-layer/get-elpa-package-install-directory
+         'haskell-snippets))
 
   (defun haskell-snippets-initialize ()
     (let ((snip-dir (expand-file-name "snippets" haskell-snippets-dir)))

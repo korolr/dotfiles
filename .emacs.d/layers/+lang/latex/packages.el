@@ -1,6 +1,6 @@
 ;;; packages.el --- Latex Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -82,11 +82,19 @@
             dotspacemacs-major-mode-leader-key 'TeX-command-master))
         (when latex-enable-folding
           (spacemacs/set-leader-keys-for-major-mode mode
+            ;; the following commands are mostly not autoloaded, but that's fine
+            ;; because `TeX-fold-mode' is added to `LaTeX-mode-hook'
             "z=" 'TeX-fold-math
             "zb" 'TeX-fold-buffer
+            "zB" 'TeX-fold-clearout-buffer
             "ze" 'TeX-fold-env
+            "zI" 'TeX-fold-clearout-item
             "zm" 'TeX-fold-macro
-            "zr" 'TeX-fold-region))
+            "zp" 'TeX-fold-paragraph
+            "zP" 'TeX-fold-clearout-paragraph
+            "zr" 'TeX-fold-region
+            "zR" 'TeX-fold-clearout-region
+            "zz" 'TeX-fold-dwim))
         (spacemacs/declare-prefix-for-mode mode "mh" "help")
         (spacemacs/declare-prefix-for-mode mode "mx" "text/fonts")
         (spacemacs/declare-prefix-for-mode mode "mz" "fold"))
@@ -192,5 +200,5 @@
   (add-hook 'LaTeX-mode-hook 'spacemacs/load-yasnippet))
 
 (defun latex/post-init-which-key ()
-  (push '("\\`latex/font-\\(.+\\)\\'" . "\\1")
-        which-key-description-replacement-alist))
+  (push '((nil . "\\`latex/font-\\(.+\\)\\'") . (nil . "\\1"))
+        which-key-replacement-alist))

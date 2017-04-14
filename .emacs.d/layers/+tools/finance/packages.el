@@ -1,6 +1,6 @@
 ;;; packages.el --- Finance Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -43,8 +43,14 @@
          "t" 'ledger-insert-effective-date
          "y" 'ledger-set-year
          "RET" 'ledger-set-month)
+      (spacemacs/set-leader-keys-for-major-mode 'ledger-reconcile-mode
+        (or dotspacemacs-major-mode-leader-key ",") 'ledger-reconcile-toggle
+        "a" 'ledger-reconcile-add
+        "q" 'ledger-reconcile-quit
+        "t" 'ledger-reconcile-change-target
+        "RET" 'ledger-reconcile-finish)
       ;; temporary hack to work-around an issue with evil-define-key
-      ;; more info: https://bitbucket.org/lyro/evil/issues/301/evil-define-key-for-minor-mode-does-not
+      ;; more info: https://github.com/emacs-evil/evil/issues/301
       ;; TODO remove this hack if the limitation is removed upstream
       (add-hook 'ledger-mode-hook 'evil-normalize-keymaps)
       (evilified-state-evilify ledger-report-mode ledger-report-mode-map))))

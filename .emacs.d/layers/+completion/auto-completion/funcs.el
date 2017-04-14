@@ -1,6 +1,6 @@
 ;;; funcs.el --- Auto-completion functions File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -232,7 +232,7 @@
   "Call `yas-expand' and switch to `insert state'"
   (interactive)
   (call-interactively 'aya-expand)
-  (unless holy-mode (evil-insert-state)))
+  (evil-insert-state))
 
 
 ;; Yasnippet and Smartparens

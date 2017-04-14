@@ -1,6 +1,6 @@
 ;;; core-dotspacemacs.el --- Spacemacs Core File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -232,7 +232,7 @@ auto-save the file in-place, `cache' to auto-save the file to another
 file stored in the cache directory and `nil' to disable auto-saving.
 Default value is `cache'.")
 
-(defvar dotspacemacs-enable-paste-transient-state t
+(defvar dotspacemacs-enable-paste-transient-state nil
   "If non nil the paste transient-state is enabled. While enabled pressing `p`
 several times cycle between the kill ring content.'")
 (defvaralias
@@ -293,8 +293,20 @@ recenters point when it reaches the top or bottom of the
 screen.")
 
 (defvar dotspacemacs-line-numbers nil
-  "If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-derivatives. If set to `relative', also turns on relative line numbers.")
+  "Control line numbers activation.
+If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+`text-mode' derivatives. If set to `relative', line numbers are relative.
+This variable can also be set to a property list for finer control:
+'(:relative nil
+  :disabled-for-modes dired-mode
+                      doc-view-mode
+                      markdown-mode
+                      org-mode
+                      pdf-view-mode
+                      text-mode
+  :size-limit-kb 1000)
+The property `:enabled-for-modes' takes priority over `:disabled-for-modes' and
+restricts line-number to the specified list of major-mode.")
 
 (defvar dotspacemacs-persistent-server nil
   "If non nil advises quit functions to keep server open when quitting.")
@@ -456,8 +468,9 @@ Called with `C-u C-u' skips `dotspacemacs/user-config' _and_ preleminary tests."
                    (lambda (x)
                      (and (boundp x)
                           (not (keywordp x))
-                          (string-prefix-p "dotspacemacs"
-                                           (symbol-name x))))))
+                          ;; avoid private variables to show up
+                          (not (string-match-p "--" (symbol-name x)))
+                          (string-prefix-p "dotspacemacs" (symbol-name x))))))
 
 (defun dotspacemacs/get-variable-list ()
   "Return a list of all dotspacemacs variable symbols."
@@ -492,6 +505,14 @@ a display strng and the value is the actual value to return."
   (let ((ido-max-window-height (1+ (length candidates))))
     (cadr (assoc (ido-completing-read prompt (mapcar 'car candidates))
                  candidates))))
+
+(defun dotspacemacs/maybe-install-dotfile ()
+  "Install the dotfile if it does not exist."
+  (unless (file-exists-p dotspacemacs-filepath)
+    (spacemacs-buffer/set-mode-line "Dotfile wizard installer")
+    (spacemacs//redisplay)
+    (when (dotspacemacs/install 'with-wizard)
+      (configuration-layer/sync))))
 
 (defun dotspacemacs/install (arg)
   "Install the dotfile, return non nil if the doftile has been installed.
@@ -548,20 +569,16 @@ If ARG is non nil then Ask questions to the user before installing the dotfile."
           (write-file dotspacemacs-filepath)
           (message "%s has been installed." dotspacemacs-filepath)
           t))))
-  (load-file dotspacemacs-filepath))
-
-(defun dotspacemacs//install-and-replace (&optional values)
-  "Install the dotfile and replace its content according to VALUES.
-
-VALUES is an alist where the key is the text to replace and value is the new
-value."
-  )
+  (dotspacemacs/load-file)
+  ;; force new wizard values to be applied
+  (dotspacemacs/init))
 
 (defun dotspacemacs/load-file ()
   "Load ~/.spacemacs if it exists."
   (let ((dotspacemacs (dotspacemacs/location)))
     (if (file-exists-p dotspacemacs)
-        (unless (with-demoted-errors "Error loading .spacemacs: %S" (load dotspacemacs))
+        (unless (with-demoted-errors "Error loading .spacemacs: %S"
+                  (load dotspacemacs))
           (dotspacemacs/safe-load)))))
 
 (defun dotspacemacs/safe-load ()

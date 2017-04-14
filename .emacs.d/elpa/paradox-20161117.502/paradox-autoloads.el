@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "paradox" "paradox.el" (22688 13588 959978
-;;;;;;  855000))
+;;;### (autoloads nil "paradox" "paradox.el" (22768 50872 454793
+;;;;;;  833000))
 ;;; Generated autoloads from paradox.el
 
 (autoload 'paradox-list-packages "paradox" "\
@@ -63,7 +63,7 @@ empty.  Passing a non-nil REFRESH argument forces this update.
 
 ;;;### (autoloads nil nil ("paradox-commit-list.el" "paradox-core.el"
 ;;;;;;  "paradox-execute.el" "paradox-github.el" "paradox-menu.el"
-;;;;;;  "paradox-pkg.el") (22688 13588 975978 854000))
+;;;;;;  "paradox-pkg.el") (22768 50872 458127 167000))
 
 ;;;***
 

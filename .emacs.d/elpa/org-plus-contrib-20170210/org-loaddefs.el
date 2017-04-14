@@ -3373,7 +3373,7 @@ Call the customize function with org as argument.
 
 ;;;***
 
-;;;### (autoloads nil "ox" "ox.el" "05bb28760552014600de6c6647d967bb")
+;;;### (autoloads nil "ox" "ox.el" "097a77798280a3ed71b2e553be20e1e1")
 ;;; Generated autoloads from ox.el
 
 (autoload 'org-export-get-backend "ox" "\
@@ -3562,7 +3562,7 @@ When ARG is `\\[universal-argument] \\[universal-argument]', display the asynchr
 
 ;;;***
 
-;;;### (autoloads nil "ox-ascii" "ox-ascii.el" "95b3c37f08fb0ebe5273efafd0f988f1")
+;;;### (autoloads nil "ox-ascii" "ox-ascii.el" "3bfc640c1da1b9dd65d92c8f9b1ba26a")
 ;;; Generated autoloads from ox-ascii.el
 
 (autoload 'org-ascii-export-as-ascii "ox-ascii" "\

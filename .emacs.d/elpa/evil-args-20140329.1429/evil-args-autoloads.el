@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "evil-args" "evil-args.el" (22688 13537 239980
-;;;;;;  347000))
+;;;### (autoloads nil "evil-args" "evil-args.el" (22768 50815 954792
+;;;;;;  335000))
 ;;; Generated autoloads from evil-args.el
 
 (autoload 'evil-backward-arg "evil-args" "\

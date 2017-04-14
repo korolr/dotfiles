@@ -1,6 +1,6 @@
 ;;; packages.el --- rebox layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Christian E. Hopps <chopps@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -14,7 +14,6 @@
 (defun rebox/init-rebox2 ()
   (use-package rebox2
     :defer t
-    :diminish rebox-mode
     :init
     (progn
       (when rebox-enable-in-text-mode
@@ -39,6 +38,7 @@
         "xbc" 'spacemacs/rebox-transient-state/rebox-center))
     :config
     (progn
+      (spacemacs|hide-lighter rebox-mode)
       (rebox-register-template 71 176 ["?"
                                        "? box123456"
                                        "?"])

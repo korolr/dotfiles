@@ -27,7 +27,7 @@ This layer provides auto-completion to Spacemacs.
 
 The following completion engines are supported:
 - [[http://company-mode.github.io/][company]]
-- [[http://auto-complete.org/][auto-complete]]
+- [[https://github.com/auto-complete/auto-complete][auto-complete]]
 
 Snippets are supported via [[https://github.com/capitaomorte/yasnippet][yasnippet]] and [[https://github.com/abo-abo/auto-yasnippet][auto-yasnippet]].
 
@@ -81,10 +81,10 @@ you don't use it already.
 
 ** Snippets directories
 The following directories are added by default:
-- ~/.emacs.d/elpa/yasnippet-xxxxx/snippets
-- ~/.emacs.d/layers/auto-completion/snippets
-- ~/.emacs.d/private/snippets (conditional to the value of =auto-completion-private-snippets-directory=)
-- ~/.spacemacs.d/snippets (conditional to the existence of =~/.spacemacs.d= directory)
+- =~/.emacs.d/elpa/yasnippet-xxxxx/snippets=
+- =~/.emacs.d/layers/auto-completion/snippets=
+- =~/.emacs.d/private/snippets= (conditional to the value of =auto-completion-private-snippets-directory=)
+- =~/.spacemacs.d/snippets= (conditional to the existence of =~/.spacemacs.d= directory)
 
 You can provide additional directories by setting the variable
 =auto-completion-private-snippets-directory= which can take a string in case of
@@ -142,7 +142,7 @@ for a given mode.
 You may want to enable company globally to get auto-completion
 everywhere even in the modes which are not configured by Spacemacs. To do
 so, you just have to add =(global-company-mode)= in the
-=dotspacemacs/user -config= function of your dotfile.
+=dotspacemacs/user-config= function of your dotfile.
 
 Note that if you want to enable =auto-complete= globally you will have to
 disable =company= first, see the next section to do so.
@@ -192,7 +192,7 @@ your ~.spacemacs~ file with (e.g.)
    '((auto-completion :variables
                       spacemacs-default-company-backends '(company-files company-capf))))
 #+END_SRC
- 
+
 ** Improved faces
 For nicer-looking faces, try adding the following to `custom-set-faces` in your dotspacemacs file.
 

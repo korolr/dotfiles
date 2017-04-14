@@ -1,6 +1,6 @@
 ;;; funcs.el --- Helm Layer functions File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -213,3 +213,12 @@ Ensure that helm is required before calling FUNC."
             (line-number-at-pos))
           spacemacs--gne-line-func 'helm-grep-action
           next-error-function 'spacemacs/gne-next)))
+
+
+;; theme
+
+(defun spacemacs/helm-themes ()
+  "Remove limit on number of candidates on `helm-themes'"
+  (interactive)
+  (let (helm-candidate-number-limit)
+    (helm-themes)))

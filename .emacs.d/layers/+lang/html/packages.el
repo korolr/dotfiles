@@ -1,6 +1,6 @@
 ;;; packages.el --- HTML Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -30,15 +30,18 @@
     yasnippet
     ))
 
-;;TODO: whenever company-web makes a backend for haml-mode it should be added here. -- @robbyoconnor
 (defun html/post-init-company ()
-  (spacemacs|add-company-hook css-mode)
-  (spacemacs|add-company-hook jade-mode)
-  (spacemacs|add-company-hook slim-mode)
-  (spacemacs|add-company-hook web-mode))
+  (spacemacs|add-company-hook css-mode))
 
+;;TODO: whenever company-web makes a backend for haml-mode it should be added here. -- @robbyoconnor
 (defun html/init-company-web ()
-  (use-package company-web))
+  (use-package company-web
+    :defer t
+    :init
+    (progn
+      (spacemacs|add-company-hook jade-mode)
+      (spacemacs|add-company-hook slim-mode)
+      (spacemacs|add-company-hook web-mode))))
 
 (defun html/init-css-mode ()
   (use-package css-mode
@@ -132,7 +135,8 @@
 (defun html/init-pug-mode ()
   (use-package pug-mode
     :defer t
-    :mode ("\\.pug$" . pug-mode)))
+    :mode ("\\.pug$" . pug-mode)
+    :init (push 'company-web-jade company-backends-jade-mode)))
 
 (defun html/init-sass-mode ()
   (use-package sass-mode
@@ -146,7 +150,8 @@
 
 (defun html/init-slim-mode ()
   (use-package slim-mode
-    :defer t))
+    :defer t
+    :init (push 'company-web-slim company-backends-slim-mode)))
 
 (defun html/post-init-smartparens ()
   (spacemacs/add-to-hooks
@@ -170,7 +175,9 @@
   (use-package web-mode
     :defer t
     :init
-    (push '(company-web-html company-css) company-backends-web-mode)
+    (progn
+      (push '(company-web-html company-css) company-backends-web-mode)
+      (add-hook 'web-mode-hook 'spacemacs//company-web-minimum-prefix-length))
     :config
     (progn
       (spacemacs/declare-prefix-for-mode 'web-mode "me" "errors")

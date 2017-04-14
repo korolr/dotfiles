@@ -1,6 +1,6 @@
 ;;; packages.el --- Ivy Layer packages File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -12,6 +12,7 @@
 (setq ivy-packages
       '(
         auto-highlight-symbol
+        bookmark
         counsel
         (counsel-projectile :toggle (configuration-layer/package-usedp 'projectile))
         evil
@@ -191,9 +192,9 @@
    '(("c" persp-kill-without-buffers "Close layout(s)")
      ("k" persp-kill  "Kill layout(s)")))
   (setq spacemacs-layouts-transient-state-remove-bindings
-        '("b" "l" "C" "X"))
+        '("C" "X"))
   (setq spacemacs-layouts-transient-state-add-bindings
-        '(("b" spacemacs/ivy-spacemacs-layout-buffer)
+        '(("b" spacemacs/ivy-spacemacs-layout-buffer :exit t)
           ("l" spacemacs/ivy-spacemacs-layouts :exit t)
           ("C" spacemacs/ivy-spacemacs-layout-close-other :exit t)
           ("X" spacemacs/ivy-spacemacs-layout-kill-other :exit t))))
@@ -202,6 +203,9 @@
   (setq projectile-completion-system 'ivy)
   (spacemacs/set-leader-keys
     "pv"  'projectile-vc))
+
+(defun ivy/post-init-bookmark ()
+  (spacemacs/set-leader-keys "fb" 'counsel-bookmark))
 
 (defun ivy/init-smex ()
   (use-package smex

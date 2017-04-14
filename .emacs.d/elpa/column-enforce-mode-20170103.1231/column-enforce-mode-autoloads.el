@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "column-enforce-mode" "column-enforce-mode.el"
-;;;;;;  (22688 13528 739980 592000))
+;;;;;;  (22768 50807 34792 98000))
 ;;; Generated autoloads from column-enforce-mode.el
 
 (autoload 'column-enforce-n "column-enforce-mode" "\

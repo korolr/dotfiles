@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "ace-jump-helm-line" "ace-jump-helm-line.el"
-;;;;;;  (22688 13522 239980 780000))
+;;;;;;  (22768 50800 58125 246000))
 ;;; Generated autoloads from ace-jump-helm-line.el
 
 (autoload 'ace-jump-helm-line "ace-jump-helm-line" "\

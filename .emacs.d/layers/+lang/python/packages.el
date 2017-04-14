@@ -1,6 +1,6 @@
 ;;; packages.el --- Python Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -145,8 +145,6 @@
 
 (defun python/init-nose ()
   (use-package nose
-    :if (or (eq 'nose python-test-runner)
-            (if (listp python-test-runner) (member 'nose python-test-runner)))
     :commands (nosetests-one
                nosetests-pdb-one
                nosetests-all
@@ -155,12 +153,7 @@
                nosetests-pdb-module
                nosetests-suite
                nosetests-pdb-suite)
-    :init
-    (progn
-      (spacemacs//bind-python-testing-keys)
-      (spacemacs/set-leader-keys-for-major-mode 'python-mode
-        "tS" 'nosetests-pdb-suite
-        "ts" 'nosetests-suite))
+    :init (spacemacs//bind-python-testing-keys)
     :config
     (progn
       (add-to-list 'nose-project-root-files "setup.cfg")
@@ -214,6 +207,14 @@
     :defer t
     :init
     (progn
+      (pcase python-auto-set-local-pyvenv-virtualenv
+        (`on-visit
+         (spacemacs/add-to-hooks 'spacemacs//pyvenv-mode-set-local-virtualenv
+                                 '(python-mode-hook
+                                   hy-mode-hook)))
+        (`on-project-switch
+         (add-hook 'projectile-after-switch-project-hook
+                   'spacemacs//pyvenv-mode-set-local-virtualenv)))
       (dolist (mode '(python-mode hy-mode))
         (spacemacs/set-leader-keys-for-major-mode mode
           "Va" 'pyvenv-activate
@@ -241,9 +242,6 @@
 
 (defun python/init-pytest ()
   (use-package pytest
-    :if (or (eq 'pytest python-test-runner)
-            (if (listp python-test-runner) (member 'pytest python-test-runner)))
-    :defer t
     :commands (pytest-one
                pytest-pdb-one
                pytest-all
@@ -442,7 +440,9 @@ fix this issue."
 (defun python/init-yapfify ()
   (use-package yapfify
     :defer t
-    :init (spacemacs/set-leader-keys-for-major-mode 'python-mode
-            "=" 'yapfify-buffer)
-    :config (when python-enable-yapf-format-on-save
-              (add-hook 'python-mode-hook 'yapf-mode))))
+    :init
+    (progn
+      (spacemacs/set-leader-keys-for-major-mode 'python-mode
+        "=" 'yapfify-buffer)
+      (when python-enable-yapf-format-on-save
+        (add-hook 'python-mode-hook 'yapf-mode)))))

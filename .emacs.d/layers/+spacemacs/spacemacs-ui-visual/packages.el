@@ -1,6 +1,6 @@
 ;;; packages.el --- Spacemacs UI Visual Layer packages File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -126,16 +126,16 @@
                    evil-window-move-far-right
                    evil-window-move-very-bottom
                    quit-window
-                   select-window-0
-                   select-window-1
-                   select-window-2
-                   select-window-3
-                   select-window-4
-                   select-window-5
-                   select-window-6
-                   select-window-7
-                   select-window-8
-                   select-window-9
+                   winum-select-window-0-or-10
+                   winum-select-window-1
+                   winum-select-window-2
+                   winum-select-window-3
+                   winum-select-window-4
+                   winum-select-window-5
+                   winum-select-window-6
+                   winum-select-window-7
+                   winum-select-window-8
+                   winum-select-window-9
                    windmove-left
                    windmove-right
                    windmove-up
@@ -184,13 +184,14 @@
 Navigation^^^^             Actions^^         Visual actions/config^^^
 ───────^^^^─────────────── ───────^^──────── ───────^^^────────────────
 [_L_]   next sibling^^     [_c_] create      [_TAB_] shrink/enlarge
-[_H_]   previous sibling^^ [_d_] delete      [_|_]   vertical split
-[_J_]   goto child^^       [_r_] rename      [_-_]   horizonatal split
-[_K_]   goto parent^^      [_R_] change root [_gr_]  refresh^
-[_l_]   open/expand^^      ^^                [_s_]   hidden:^^^ %s(if neo-buffer--show-hidden-file-p \"on\" \"off\")
+[_H_]   previous sibling^^ [_C_] copy        [_|_]   vertical split
+[_J_]   goto child^^       [_d_] delete      [_-_]   horizonatal split
+[_K_]   goto parent^^      [_r_] rename      [_gr_]  refresh^
+[_l_]   open/expand^^      [_R_] change root [_s_]   hidden:^^^ %s(if neo-buffer--show-hidden-file-p \"on\" \"off\")
 [_h_]   up/collapse^^      ^^                ^^^
 [_j_]   line down^^        ^^                ^^^
 [_k_]   line up^^          ^^                ^^
+[_'_]   quick look         ^^                ^^
 [_RET_] open               ^^^^              [_?_]   close hints
 "
         :bindings
@@ -199,7 +200,9 @@ Navigation^^^^             Actions^^         Visual actions/config^^^
         ("|" neotree-enter-vertical-split)
         ("-" neotree-enter-horizontal-split)
         ("?" nil :exit t)
+        ("'" neotree-quick-look)
         ("c" neotree-create-node)
+        ("C" neotree-copy-node)
         ("d" neotree-delete-node)
         ("gr" neotree-refresh)
         ("h" spacemacs/neotree-collapse-or-up)
@@ -223,7 +226,9 @@ Navigation^^^^             Actions^^         Visual actions/config^^^
           (kbd "RET") 'neotree-enter
           (kbd "|") 'neotree-enter-vertical-split
           (kbd "-") 'neotree-enter-horizontal-split
+          (kbd "'") 'neotree-quick-look
           (kbd "c") 'neotree-create-node
+          (kbd "C") 'neotree-copy-node
           (kbd "d") 'neotree-delete-node
           (kbd "gr") 'neotree-refresh
           (kbd "h") 'spacemacs/neotree-collapse-or-up
@@ -242,6 +247,7 @@ Navigation^^^^             Actions^^         Visual actions/config^^^
 
       (spacemacs/set-leader-keys
         "ft" 'neotree-toggle
+        "fT" 'neotree-show
         "pt" 'neotree-find-project-root))
     :config
     (spacemacs//neotree-key-bindings)))

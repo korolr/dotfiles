@@ -1,6 +1,6 @@
 ;;; packages.el --- Elixir Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -16,6 +16,7 @@
     elixir-mode
     flycheck
     flycheck-mix
+    flycheck-credo
     ggtags
     helm-gtags
     ob-elixir
@@ -131,6 +132,11 @@
       (add-hook 'elixir-mode-local-vars-hook
                 'spacemacs//elixir-enable-compilation-checking))))
 
+(defun elixir/init-flycheck-credo ()
+  (use-package flycheck-credo
+    :defer t
+    :init (add-hook 'flycheck-mode-hook #'flycheck-credo-setup)))
+
 (defun elixir/init-elixir-mode ()
   (use-package elixir-mode
     :defer t))
@@ -160,8 +166,11 @@
     (progn
       (sp-with-modes '(elixir-mode)
         (sp-local-pair
-         "->" "end"
-         :when '(("RET"))
+         "(" ")"
+         :unless '(:add spacemacs//elixir-point-after-fn-p))
+        (sp-local-pair
+         "fn" "end"
+         :when '(("SPC" "RET" "-" "("))
          :post-handlers '(:add spacemacs//elixir-do-end-close-action)
          :actions '(insert)))
       (sp-with-modes '(elixir-mode)

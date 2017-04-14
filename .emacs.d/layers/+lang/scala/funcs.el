@@ -1,6 +1,6 @@
 ;;; funcs.el --- Scala Layer functions File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -112,8 +112,3 @@ point to the position of the join."
   "Yank to kill ring and print full type name at point to the minibuffer."
   (interactive)
   (ensime-type-at-point t t))
-
-(defun sbt-hydra ()
-  "Wrapper to rename sbt-hydra:hydra to sbt-hydra"
-  (interactive)
-  (sbt-hydra:hydra))

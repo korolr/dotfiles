@@ -1,6 +1,6 @@
 ;;; packages.el --- Spacemacs Base Layer packages File
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -45,7 +45,7 @@
         (recentf :location built-in)
         (savehist :location built-in)
         (saveplace :location built-in)
-        spacemacs-theme
+        (spacemacs-theme :location built-in)
         (subword :location built-in)
         (tar-mode :location built-in)
         (uniquify :location built-in)
@@ -240,16 +240,25 @@
     :init (spacemacs/set-leader-keys "ji" 'imenu)))
 
 (defun spacemacs-base/init-linum ()
-  (when dotspacemacs-line-numbers
-    (add-hook 'prog-mode-hook 'linum-mode)
-    (add-hook 'text-mode-hook 'linum-mode))
-  (setq linum-format "%4d")
-  (spacemacs|add-toggle line-numbers
-    :mode linum-mode
-    :documentation "Show the line numbers."
-    :evil-leader "tn")
-  (advice-add #'linum-update-window
-              :after #'spacemacs/linum-update-window-scale-fix))
+  (use-package linum
+    :init
+    (progn
+      (setq linum-format "%4d")
+      (spacemacs|add-toggle line-numbers
+        :mode linum-mode
+        :documentation "Show the line numbers."
+        :evil-leader "tn")
+      (advice-add #'linum-update-window
+                  :after #'spacemacs//linum-update-window-scale-fix)
+      (advice-add #'linum-on
+                  :around #'spacemacs//linum-on))
+    :config
+    (progn
+      (when (spacemacs//linum-backward-compabitility)
+        (add-hook 'prog-mode-hook 'linum-mode)
+        (add-hook 'text-mode-hook 'linum-mode))
+      (when dotspacemacs-line-numbers
+        (global-linum-mode)))))
 
 (defun spacemacs-base/init-occur-mode ()
   (evilified-state-evilify-map occur-mode-map
@@ -345,7 +354,7 @@
         "pc" 'projectile-compile-project
         "pD" 'projectile-dired
         "pg" 'projectile-find-tag
-        "p C-g" 'projectile-regenerate-tags
+        "pG" 'projectile-regenerate-tags
         "pI" 'projectile-invalidate-cache
         "pk" 'projectile-kill-buffers
         "pR" 'projectile-replace

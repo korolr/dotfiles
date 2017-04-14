@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org" "org.el" (22688 13579 503979 128000))
+;;;### (autoloads nil "org" "org.el" (22768 50863 431460 261000))
 ;;; Generated autoloads from org.el
 
 (autoload 'org-babel-do-load-languages "org" "\
@@ -225,8 +225,8 @@ Call the customize function with org as argument.
 
 ;;;***
 
-;;;### (autoloads nil "org-agenda" "org-agenda.el" (22688 13579 39979
-;;;;;;  141000))
+;;;### (autoloads nil "org-agenda" "org-agenda.el" (22768 50863 134793
+;;;;;;  586000))
 ;;; Generated autoloads from org-agenda.el
 
 (autoload 'org-toggle-sticky-agenda "org-agenda" "\
@@ -500,7 +500,7 @@ to override `appt-message-warning-time'.
 ;;;***
 
 ;;;### (autoloads nil "org-annotate-file" "org-annotate-file.el"
-;;;;;;  (22688 13579 47979 141000))
+;;;;;;  (22768 50863 141460 254000))
 ;;; Generated autoloads from org-annotate-file.el
 
 (autoload 'org-annotate-file "org-annotate-file" "\
@@ -519,8 +519,8 @@ The annotation will link to ANNOTATED-BUFFER if specified,
 
 ;;;***
 
-;;;### (autoloads nil "org-bullets" "org-bullets.el" (22688 13579
-;;;;;;  79979 140000))
+;;;### (autoloads nil "org-bullets" "org-bullets.el" (22768 50863
+;;;;;;  161460 254000))
 ;;; Generated autoloads from org-bullets.el
 
 (autoload 'org-bullets-mode "org-bullets" "\
@@ -530,8 +530,8 @@ UTF-8 bullets for `org-mode'.
 
 ;;;***
 
-;;;### (autoloads nil "org-capture" "org-capture.el" (22688 13579
-;;;;;;  83979 140000))
+;;;### (autoloads nil "org-capture" "org-capture.el" (22768 50863
+;;;;;;  164793 587000))
 ;;; Generated autoloads from org-capture.el
 
 (autoload 'org-capture-string "org-capture" "\
@@ -574,8 +574,8 @@ Set `org-capture-templates' to be similar to `org-remember-templates'.
 
 ;;;***
 
-;;;### (autoloads nil "org-colview" "org-colview.el" (22688 13579
-;;;;;;  111979 139000))
+;;;### (autoloads nil "org-colview" "org-colview.el" (22768 50863
+;;;;;;  184793 587000))
 ;;; Generated autoloads from org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-colview" "\
@@ -643,8 +643,8 @@ Turn on or update column view in the agenda.
 
 ;;;***
 
-;;;### (autoloads nil "org-compat" "org-compat.el" (22688 13579 115979
-;;;;;;  139000))
+;;;### (autoloads nil "org-compat" "org-compat.el" (22768 50863 188126
+;;;;;;  922000))
 ;;; Generated autoloads from org-compat.el
 
 (autoload 'org-check-version "org-compat" "\
@@ -654,8 +654,8 @@ Try very hard to provide sensible version strings.
 
 ;;;***
 
-;;;### (autoloads nil "org-contacts" "org-contacts.el" (22688 13579
-;;;;;;  119979 139000))
+;;;### (autoloads nil "org-contacts" "org-contacts.el" (22768 50863
+;;;;;;  191460 254000))
 ;;; Generated autoloads from org-contacts.el
 
 (autoload 'org-contacts "org-contacts" "\
@@ -665,8 +665,8 @@ Create agenda view for contacts matching NAME.
 
 ;;;***
 
-;;;### (autoloads nil "org-eldoc" "org-eldoc.el" (22688 13579 171979
-;;;;;;  137000))
+;;;### (autoloads nil "org-eldoc" "org-eldoc.el" (22768 50863 218126
+;;;;;;  922000))
 ;;; Generated autoloads from org-eldoc.el
 
 (autoload 'org-eldoc-load "org-eldoc" "\
@@ -678,8 +678,8 @@ Set up org-eldoc documentation function.
 
 ;;;***
 
-;;;### (autoloads nil "org-link-edit" "org-link-edit.el" (22688 13579
-;;;;;;  299979 133000))
+;;;### (autoloads nil "org-link-edit" "org-link-edit.el" (22768 50863
+;;;;;;  298126 924000))
 ;;; Generated autoloads from org-link-edit.el
 
 (autoload 'org-link-edit-forward-slurp "org-link-edit" "\
@@ -762,8 +762,8 @@ If N is negative, barf trailing blobs instead of leading blobs.
 
 ;;;***
 
-;;;### (autoloads nil "org-lint" "org-lint.el" (22688 13579 307979
-;;;;;;  133000))
+;;;### (autoloads nil "org-lint" "org-lint.el" (22768 50863 301460
+;;;;;;  258000))
 ;;; Generated autoloads from org-lint.el
 
 (autoload 'org-lint "org-lint" "\
@@ -779,8 +779,8 @@ ARG can also be a list of checker names, as symbols, to run.
 
 ;;;***
 
-;;;### (autoloads nil "org-macs" "org-macs.el" (22688 13579 335979
-;;;;;;  132000))
+;;;### (autoloads nil "org-macs" "org-macs.el" (22768 50863 324793
+;;;;;;  591000))
 ;;; Generated autoloads from org-macs.el
 
 (autoload 'org-load-noerror-mustsuffix "org-macs" "\
@@ -790,8 +790,8 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 
 ;;;***
 
-;;;### (autoloads nil "org-passwords" "org-passwords.el" (22688 13579
-;;;;;;  387979 131000))
+;;;### (autoloads nil "org-passwords" "org-passwords.el" (22768 50863
+;;;;;;  364793 593000))
 ;;; Generated autoloads from org-passwords.el
 
 (autoload 'org-passwords-mode "org-passwords" "\
@@ -815,8 +815,8 @@ With a double prefix arg \\[universal-argument] \\[universal-argument], open the
 
 ;;;***
 
-;;;### (autoloads nil "org-registry" "org-registry.el" (22688 13579
-;;;;;;  407979 130000))
+;;;### (autoloads nil "org-registry" "org-registry.el" (22768 50863
+;;;;;;  374793 592000))
 ;;; Generated autoloads from org-registry.el
 
 (autoload 'org-registry-show "org-registry" "\
@@ -853,8 +853,8 @@ Update the registry for the current Org file.
 
 ;;;***
 
-;;;### (autoloads nil "org-screenshot" "org-screenshot.el" (22688
-;;;;;;  13579 427979 130000))
+;;;### (autoloads nil "org-screenshot" "org-screenshot.el" (22768
+;;;;;;  50863 384793 593000))
 ;;; Generated autoloads from org-screenshot.el
 
 (autoload 'org-screenshot-take "org-screenshot" "\
@@ -897,8 +897,8 @@ Open A Dired buffer with unused screenshots marked
 
 ;;;***
 
-;;;### (autoloads nil "org-toc" "org-toc.el" (22688 13579 459979
-;;;;;;  129000))
+;;;### (autoloads nil "org-toc" "org-toc.el" (22768 50863 408126
+;;;;;;  928000))
 ;;; Generated autoloads from org-toc.el
 
 (autoload 'org-toc-show "org-toc" "\
@@ -908,8 +908,8 @@ Show the table of contents of the current Org-mode buffer.
 
 ;;;***
 
-;;;### (autoloads nil "org-track" "org-track.el" (22688 13579 463979
-;;;;;;  129000))
+;;;### (autoloads nil "org-track" "org-track.el" (22768 50863 411460
+;;;;;;  260000))
 ;;; Generated autoloads from org-track.el
 
 (autoload 'org-track-fetch-package "org-track" "\
@@ -930,8 +930,8 @@ DIRECTORY is where the directory org-mode/ lives (i.e. the
 
 ;;;***
 
-;;;### (autoloads nil "org-version" "org-version.el" (22688 13579
-;;;;;;  475979 128000))
+;;;### (autoloads nil "org-version" "org-version.el" (22768 50863
+;;;;;;  418126 927000))
 ;;; Generated autoloads from org-version.el
 
 (autoload 'org-release "org-version" "\
@@ -951,8 +951,8 @@ The location of ODT styles.")
 
 ;;;***
 
-;;;### (autoloads nil "ox-freemind" "ox-freemind.el" (22688 13579
-;;;;;;  547979 126000))
+;;;### (autoloads nil "ox-freemind" "ox-freemind.el" (22768 50863
+;;;;;;  464793 596000))
 ;;; Generated autoloads from ox-freemind.el
 
 (autoload 'org-freemind-export-to-freemind "ox-freemind" "\
@@ -987,8 +987,8 @@ Return output file's name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-koma-letter" "ox-koma-letter.el" (22688
-;;;;;;  13579 567979 126000))
+;;;### (autoloads nil "ox-koma-letter" "ox-koma-letter.el" (22768
+;;;;;;  50863 478126 929000))
 ;;; Generated autoloads from ox-koma-letter.el
 
 (autoload 'org-koma-letter-export-as-latex "ox-koma-letter" "\
@@ -1088,7 +1088,7 @@ Return PDF file's name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-rss" "ox-rss.el" (22688 13579 603979 125000))
+;;;### (autoloads nil "ox-rss" "ox-rss.el" (22768 50863 504793 597000))
 ;;; Generated autoloads from ox-rss.el
 
 (autoload 'org-rss-export-as-rss "ox-rss" "\
@@ -1152,8 +1152,8 @@ Return output file name.
 
 ;;;***
 
-;;;### (autoloads nil "ox-taskjuggler" "ox-taskjuggler.el" (22688
-;;;;;;  13579 611979 124000))
+;;;### (autoloads nil "ox-taskjuggler" "ox-taskjuggler.el" (22768
+;;;;;;  50863 508126 929000))
 ;;; Generated autoloads from ox-taskjuggler.el
 
 (autoload 'org-taskjuggler-export "ox-taskjuggler" "\
@@ -1277,8 +1277,8 @@ the reports is done using the TaskJuggler GUI.
 ;;;;;;  "org-wl.el" "ox-ascii.el" "ox-beamer.el" "ox-bibtex.el" "ox-confluence.el"
 ;;;;;;  "ox-deck.el" "ox-extra.el" "ox-groff.el" "ox-html.el" "ox-icalendar.el"
 ;;;;;;  "ox-latex.el" "ox-man.el" "ox-md.el" "ox-odt.el" "ox-org.el"
-;;;;;;  "ox-publish.el" "ox-s5.el" "ox-texinfo.el" "ox.el") (22688
-;;;;;;  13579 671979 123000))
+;;;;;;  "ox-publish.el" "ox-s5.el" "ox-texinfo.el" "ox.el") (22768
+;;;;;;  50863 548126 931000))
 
 ;;;***
 
