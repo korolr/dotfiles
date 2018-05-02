@@ -22,6 +22,7 @@ local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- }}}
 
+
 -- {{{ Error handling
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical, title = "Oops, there were errors during startup!",
@@ -29,6 +30,7 @@ if awesome.startup_errors then
 end
 
 do
+    naughty.config.padding = beautiful.useless_gap and 2 * beautiful.useless_gap or 0
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
         if in_error then return end
@@ -58,13 +60,13 @@ run_once({ "urxvtd", "unclutter -root" })
 -- }}}
 
 -- {{{ Variable definitions
-local chosen_theme = "powerarrow"
+local chosen_theme = "powerarrow-dark"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "gnome-terminal"
+local terminal     = "terminator"
 local editor       = "vim"
-local gui_editor   = "gvim"
-local browser      = "google-chrome-stable"
+local gui_editor   = "vscode"
+local browser      = "chromium"
 
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
@@ -194,7 +196,8 @@ screen.connect_signal("property::geometry", function(s)
     end
 end)
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
+awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) 
+end)
 -- }}}
 
 -- {{{ Mouse bindings
