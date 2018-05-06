@@ -1,0 +1,35 @@
+[global_config]
+  borderless = True
+  dbus = False
+  focus = system
+  homogeneous_tabbar = False
+  scroll_tabbar = True
+  tab_position = hidden
+  title_inactive_bg_color = "#1c232b"
+  title_inactive_fg_color = "#888a85"
+  title_receive_bg_color = "#2e3436"
+  title_transmit_bg_color = "#1c232b"
+  title_transmit_fg_color = "#98971a"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.92
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Monospace 12
+    foreground_color = "#ebdbb2"
+    palette = "#fbf1c7:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#7c6f64:#928374:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#3c3836"
+    scrollback_lines = 2500
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

@@ -17,7 +17,7 @@ local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
 local lain          = require("lain")
---local menubar       = require("menubar")
+local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- }}}
@@ -64,12 +64,19 @@ local chosen_theme = "powerarrow-dark"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "terminator"
-local editor       = "vim"
-local gui_editor   = "vscode"
+local editor       = "code"
+local gui_editor   = "nautilus"
 local browser      = "chromium"
+local filebrowser      = "nautilus"
+
+lain.layout.cascade.tile.offset_x      = 2
+lain.layout.cascade.tile.offset_y      = 32
+lain.layout.cascade.tile.extra_padding = 5
+lain.layout.cascade.tile.nmaster       = 5
+lain.layout.cascade.tile.ncol          = 2
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "WEB", "WORK", "CODE", "IM", "MUSIC" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -197,6 +204,7 @@ screen.connect_signal("property::geometry", function(s)
 end)
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) 
+    -- s.padding = {left=s.padding.left+15, right=s.padding.right+15, top=s.padding.top+15, bottom=s.padding.bottom+15}
 end)
 -- }}}
 
@@ -423,6 +431,7 @@ globalkeys = awful.util.table.join(
     -- User programs
     awful.key({ modkey }, "e", function () awful.spawn(gui_editor) end),
     awful.key({ modkey }, "q", function () awful.spawn(browser) end),
+    awful.key({ modkey }, "n", function () awful.spawn(filebrowser) end),
 
     -- Default
     --[[ Menubar
