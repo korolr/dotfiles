@@ -1180,6 +1180,7 @@
     endif
 " }
 
+
 set nospell
 set cursorline
 set nocursorcolumn
@@ -1190,7 +1191,23 @@ set omnifunc=syntaxcomplete#Complete
 :let loaded_matchparen = 0
 set gfn=Menlo:h15
 map <F3> :NERDTree<CR>
+Plugin 'prettier/vim-prettier'
+Plugin 'skywind3000/asyncrun.vim'
+
+" node
+let g:prettier#autoformat = 1
 let g:jsx_ext_required = 1
+
+
+Bundle 'flowtype/vim-flow', {
+            \ 'autoload': {
+            \     'filetypes': 'javascript'
+            \ },
+            \ 'build': {
+            \     'mac': 'npm install -g flow-bin',
+            \     'unix': 'npm install -g flow-bin'
+            \ }}
+
 
 Bundle 'vim-scripts/tComment'
 Bundle 'kopischke/vim-stay'
@@ -1204,3 +1221,18 @@ Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'mxw/vim-jsx'
 Bundle 'posva/vim-vue'
 Bundle 'fatih/vim-go'
+Bundle 'w0rp/ale'
+Plugin 'jbgutierrez/vim-babel'
+Plugin 'othree/yajs.vim'
+
+
+
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+
+
