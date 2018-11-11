@@ -1,8 +1,0 @@
-<?php
-
-namespace
-Something;
-
-use Foo\Bar;
-
-class Barx

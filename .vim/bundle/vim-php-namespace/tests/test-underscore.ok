@@ -1,3 +1,0 @@
-<?php
-
-$foo = new AB\Module\Controllers\Base_Controllerx
