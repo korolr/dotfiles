@@ -1,0 +1,68 @@
+[user]
+  name = Alexsey Ramzaev
+  email = cyberfunk9@gmail.com
+
+[core]
+  editor = nvim
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
+
+[web]
+  browser = chromium
+
+[instaweb]
+  httpd = apache2 -f
+
+[rerere]
+  enabled = 1
+  autoupdate = 1
+
+[push]
+  default = matching
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow bold
+  local = green bold
+  remote = cyan bold
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+
+[diff]
+  tool = vimdiff
+
+[difftool]
+  prompt = false
+
+[github]
+  user = korolr
+  token = token
+
+[gitflow "prefix"]
+  feature = feature-
+  release = release-
+  hotfix = hotfix-
+  support = support-
+  ersiontag = v
+
+[alias]
+  co = checkout
+  c = commit
+  st = status
+  br = branch
+  pl = pull
+  p = push
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  cm = "!git add -A;git commit"
