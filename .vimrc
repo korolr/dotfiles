@@ -32,11 +32,14 @@ Plug 'fatih/vim-go'
 Plug 'w0rp/ale'
 Plug 'jbgutierrez/vim-babel'
 Plug 'othree/yajs.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'dart-lang/dart-vim-plugin'
 
 
 
-
-
+Plug 'arcticicestudio/nord-vim'
 " Place deoplete first, then autocomplete-flow
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wokalski/autocomplete-flow'
@@ -262,7 +265,8 @@ syntax on
 syntax enable
 filetype plugin indent on
 
-let ayucolor="white"
+set termguicolors     " enable true colors support
+set background=dark
 colorscheme gruvbox
 
 set autoindent
@@ -356,7 +360,7 @@ endif
 "https://github.com/reasonml-editor/vim-reason-plus
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['~/reason-language-server/reason-language-server.exe'],
-    \ 'javascript': ['flow-language-server', '--stdio'],
+    \ 'javascript': ['typescript-language-server', '--stdio'],
     \ }
 
 " Automatically start language servers.

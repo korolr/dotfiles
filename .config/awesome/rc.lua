@@ -64,9 +64,9 @@ local chosen_theme = "powerarrow-dark"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "terminator"
-local editor       = "code"
+local editor       = "nvim-gtk"
 local gui_editor   = "nautilus"
-local browser      = "chromium"
+local browser      = "firefox"
 local filebrowser      = "nautilus"
 
 lain.layout.cascade.tile.offset_x      = 2
