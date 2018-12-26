@@ -1,0 +1,45 @@
+{
+    "target": "dart_pub_get",
+    "file_regex": "(\\S*):(\\d*):(\\d*): (.*)",
+    "selector": "source.pubspec",
+    "working_dir": "${project_path}",
+    "file_name": "$file_name"
+
+    "variants": [
+        {
+            "name": "Dart: Pub Get",
+            "target": "dart_pub_get",
+            "file_name": "$file_name"
+        },
+        
+        {
+            "cmd": ["pub", "upgrade"],
+            "name": "Dart: Pub Upgrade",
+
+            "windows":
+            {
+                "cmd": ["pub.bat", "upgrade"]
+            },
+
+            "osx":
+            {
+                "cmd": ["/bin/bash", "--login", "-c", "pub upgrade"]
+            }
+        },
+
+        {
+            "cmd": ["pub", "version"],
+            "name": "Dart: Pub Version",
+
+            "windows":
+            {
+                "cmd": ["pub.bat", "version"]
+            },
+
+            "osx":
+            {
+                "cmd": ["/bin/bash", "--login", "-c", "pub version"]
+            }
+        }
+    ]
+}

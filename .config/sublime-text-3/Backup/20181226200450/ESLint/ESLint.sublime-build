@@ -1,0 +1,4 @@
+{
+  "selector": "source.js",
+  "target": "eslint"
+}

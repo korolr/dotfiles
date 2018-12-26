@@ -1,0 +1,5 @@
+{
+  "config_file": "/home/good/workspace/bo-server/.eslintrc",
+  // "node_modules_path": "/home/good/workspace/bo-server/node_modules"
+  "node_modules_path": "/usr/lib/node_modules"
+}

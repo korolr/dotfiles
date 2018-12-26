@@ -1,0 +1,54 @@
+html { padding: 0; margin: 0; }
+.markdown {
+  display:  block;
+  margin: 0;
+  padding: {% if var.is_popup %}0.2em{% else %}0{% endif %};
+  font-size: {{'+0px'|relativesize}};
+}
+div {display: block;}
+/* Headers */
+h1 { font-size: {{'+5px'|relativesize}}; }
+h2 { font-size: {{'+4px'|relativesize}}; }
+h3 { font-size: {{'+3px'|relativesize}}; }
+h4 { font-size: {{'+2px'|relativesize}}; }
+h5 { font-size: {{'+1px'|relativesize}}; }
+h6 { font-size: {{'+0px'|relativesize}}; }
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+/* Blockquote support. */
+blockquote { display: block; font-style: italic; }
+/* Horizontal rule support. */
+hr {
+    display: block;
+    padding: 1px;
+    margin: 1em;
+}
+/* Description list support */
+dl { display: block; }
+dt {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+dd {
+    display: block;
+    margin-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+/* Preformatted block */
+pre { display: block; }
+/* Blocks */
+blockquote, ol, ul, dl, p, div {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+}
+ul, ol { padding-left: 2em; }
+/* Special classes */
+.highlight { padding: 0.5em; }
+.admonition { padding: 0.5em; }

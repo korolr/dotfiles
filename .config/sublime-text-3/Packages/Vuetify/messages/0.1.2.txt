@@ -1,0 +1,8 @@
+# Vuetifyjs Sublime Package Changelog
+
+## 0.1.2 - 2018-04-21
+
+### Added
+- `.no-sublime-package` file
+
+Thank you for using Vuetify Sublime Package. If you like it so far, give it a shoutout anywhere and star the repository and also follow us on Twitter at @vuetifyjs

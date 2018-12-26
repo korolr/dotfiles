@@ -1,1 +1,0 @@
-("~/Desktop/sandbox/" "~/Desktop/vuejs-blog-boostrap-ajax/" "~/Desktop/flask-project-d/" "~/.emacs.d/")

@@ -1,0 +1,16 @@
+/*Style with current theme.*/
+html {
+  {{'.background'|css('background-color')|brightness(1.025)}}
+  {{'.foreground'|css}}
+}
+a { {{'.support.function'|css('color')}} }
+hr { {{'.foreground'|css('color')|background}} }
+{%- if var.use_pygments %}
+  {%- if var.is_light %}
+{{'default'|pygments}}
+  {%- else %}
+{{'native'|pygments}}
+  {%- endif %}
+{%- else %}
+.highlight, .inline-highlight { {{'.background'|css|brightness(0.985)}} }
+{%- endif %}

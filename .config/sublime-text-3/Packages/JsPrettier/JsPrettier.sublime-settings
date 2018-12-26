@@ -1,0 +1,386 @@
+{
+	// ----------------------------------------------------------------------
+	// Debug Mode
+	// ----------------------------------------------------------------------
+	//
+	// @param {bool} "debug"
+	// @default false
+	//
+	// When enabled (true), additional debugging information about the command
+	// and configured settings will be printed to the Sublime Text Console;
+	// useful for troubleshooting purposes.
+	// ----------------------------------------------------------------------
+
+	"debug": false,
+
+	// ----------------------------------------------------------------------
+	// Prettier CLI Path
+	// ----------------------------------------------------------------------
+	//
+	// @param {string} "prettier_cli_path"
+	// @default ""
+	//
+	// It's recommended to leave the "prettier_cli_path" value empty "".
+	// However, if Sublime Text has problems resolving the path to the
+	// `prettier` cli executable, you can explicitly specify the path here.
+	//
+	// If the `prettier_cli_path` setting is left empty (""), the path is
+	// resolved by searching locations in the following order, returning the
+	// first matched path:
+	//
+	// - Locally installed prettier, relative to the Sublime Text Project file's
+	//   root directory.
+	//   e.g.: `node_modules/.bin/prettier' and `node_modules/prettier/bin-prettier.js`.
+	// - The user's home directory, e.g.: `$HOME/node_modules/.bin/prettier`.
+	// - Look in the JsPrettier Sublime Text plug-in directory for
+	//   `node_modules/.bin/prettier`.
+	// - Finally, check if prettier is installed globally,
+	//   e.g.: `yarn global add prettier`
+	//     or: `npm install -g prettier`
+	//
+	// nvm users are required to set an appropriate absolute `prettier_cli_path`
+	// (and absolute `node_path`), according to the target runtime environment.
+	//
+	// Examples:
+	//
+	//     - macOS/Linux...: "/path/to/node_modules/.bin/prettier" (absolute)
+	//                   or  "./node_modules/.bin/prettier" (relative)
+	//     - Windows.......: "C:/path/to/npm/prettier" (absolute)
+	// ----------------------------------------------------------------------
+
+	"prettier_cli_path": "",
+
+	// ----------------------------------------------------------------------
+	// Node Path
+	// ----------------------------------------------------------------------
+	//
+	// @param {bool} "node_path"
+	// @default ""
+	//
+	// It's strongly recommended to leave the "node_path" value empty "".
+	// However, if Sublime Text has problems resolving the "absolute" path to
+	// `node`, you can explicitly specify the path here.
+	//
+	// nvm users will be required to set an appropriate absolute `node_path`
+	// (and absolute `prettier_cli_path`), according to the target runtime
+	// environment.
+	//
+	// Examples:
+	//
+	// macOS/Linux...: "node_path": "/path/to/node"
+	// Windows.......: "node_path": "C:/path/to/node.exe"
+	// ----------------------------------------------------------------------
+
+	"node_path": "",
+
+	// ----------------------------------------------------------------------
+	// Auto Format on Save
+	// ----------------------------------------------------------------------
+	//
+	// @param {bool} "auto_format_on_save"
+	// @default false
+	//
+	// Whether or not to automatically format the file on save.
+	// ----------------------------------------------------------------------
+
+	"auto_format_on_save": false,
+
+	// ----------------------------------------------------------------------
+	// Auto Format on Save Excludes
+	// ----------------------------------------------------------------------
+	//
+	// @param {array} "auto_format_on_save_excludes"
+	// @default []
+	//
+	// Ignore auto formatting when the target file, or its path resides in a
+	// particular location, and when `auto_format_on_save` is turned on.
+	//
+	// Example:
+	//
+	//     "auto_format_on_save_excludes": [
+	//         "*/node_modules/*",
+	//         "*/file.js",
+	//         "*.json"
+	//     ]
+	// ----------------------------------------------------------------------
+
+	"auto_format_on_save_excludes": [],
+
+	// ----------------------------------------------------------------------
+	// Auto Format Requires Prettier Config File
+	// ----------------------------------------------------------------------
+	//
+	// @param {bool} "auto_format_on_save_requires_prettier_config"
+	// @default false
+	//
+	// Enable auto format on save ONLY when a Prettier config file is found.
+	//
+	// The Prettier config file is resolved by first checking if a `--config </path/to/prettier/config>`
+	// is specified in the `additional_cli_args` setting, then by searching the
+	// location of the file being formatted, and finally navigating up the file
+	// tree until a config file is (or isn't) found.
+	// ----------------------------------------------------------------------
+
+	"auto_format_on_save_requires_prettier_config": false,
+
+	// ----------------------------------------------------------------------
+	// Allow Inline Formatting
+	// ----------------------------------------------------------------------
+	//
+	// @param {bool} "allow_inline_formatting"
+	// @default false
+	//
+	// Provides the ability to format selections of in-lined code, outside of
+	// the normally supported syntaxes and file types. For example, to format a
+	// selection of JavaScript code within a PHP or HTML file. When `true`, the
+	// JsPrettier command is available for use across all Sublime Text syntaxes.
+	// ----------------------------------------------------------------------
+
+	"allow_inline_formatting": false,
+
+	// ----------------------------------------------------------------------
+	// Custom File Extensions
+	// ----------------------------------------------------------------------
+	//
+	// @param {array} "custom_file_extensions"
+	// @default []
+	//
+	// Additional custom file extensions to format.
+	//
+	// There's built-in support already for "js", "jsx", "mjs", "json", "html",
+	// "graphql/gql", "ts", "tsx", "css", "scss", "less", "md", "mdx", "yml"
+	// and "vue" and "component.html" (angular html) files.
+	//
+	// Additional file extensions MUST be specified here, and without the leading dot.
+	// ----------------------------------------------------------------------
+
+	"custom_file_extensions": [],
+
+	// ----------------------------------------------------------------------
+	// Maximum File Size Limit
+	// ----------------------------------------------------------------------
+	//
+	// @param {int} "max_file_size_limit"
+	// @default -1
+	//
+	// The maximum allowed file size to format in bytes. For performance
+	// reasons, files with a greater file size than the specified
+	// `max_file_size_limit` will not be formatted.
+	//
+	// Setting the `max_file_size_limit` value to `-1` will disable file size
+	// checking (default).
+	// ----------------------------------------------------------------------
+
+	"max_file_size_limit": -1,
+
+	// ----------------------------------------------------------------------
+	// Additional CLI Arguments
+	// ----------------------------------------------------------------------
+	//
+	// @param {object} "additional_cli_args"
+	// @default {}
+	//
+	// A key-value pair of additional arguments to append to the prettier
+	// command.
+	//
+	// Examples:
+	//
+	//     "additional_cli_args": {
+	//         "--config": "path/to/my/custom/.prettierrc",
+	//         "--config-precedence": "prefer-file",
+	//         "--ignore-path": "path/to/.prettierignore",
+	//         "--with-node-modules": ""
+	//     }
+	//
+	// NOTE: If choosing to specify additional cli args, it is assumed that each
+	// argument is supported by the prettier-cli. Otherwise, the command will
+	// fail to run, and errors will be dumped out to the Sublime Text Console.
+	//
+	// You can also enable the debug setting to inspect the generated
+	// command-line output passed to prettier; which is also useful for quickly
+	// troubleshooting issues.
+	// ----------------------------------------------------------------------
+
+	"additional_cli_args": {},
+
+	// ----------------------------------------------------------------------
+	// Prettier Options
+	// ----------------------------------------------------------------------
+	//
+	// Native Prettier options are defined here.
+	//
+	// For a complete list of supported options and acceptable values,
+	// visit https://github.com/jlongster/prettier.
+	// ----------------------------------------------------------------------
+
+	"prettier_options": {
+
+		// --------------------------------------------------------------------
+		// printWidth
+		// --------------------------------------------------------------------
+		//
+		// @param {int} "prettier_options.printWidth"
+		// @default 80
+		//
+		// Fit code within this line limit.
+		// --------------------------------------------------------------------
+
+		"printWidth": 80,
+
+		// --------------------------------------------------------------------
+		// singleQuote
+		// --------------------------------------------------------------------
+		//
+		// @param {bool} "prettier_options.singleQuote"
+		// @default false
+		//
+		// If true, will use single instead of double quotes.
+		// --------------------------------------------------------------------
+
+		"singleQuote": false,
+
+		// --------------------------------------------------------------------
+		// trailingComma
+		// --------------------------------------------------------------------
+		//
+		// @param {string} "prettier_options.trailingComma"
+		// @default "none"
+		//
+		// Controls the printing of trailing commas wherever possible.
+		//
+		// Valid options:
+		//
+		// "none" - No trailing commas
+		// "es5"  - Trailing commas where valid in ES5 (objects, arrays, etc)
+		// "all"  - Trailing commas wherever possible (function arguments)
+		// --------------------------------------------------------------------
+
+		"trailingComma": "none",
+
+		// --------------------------------------------------------------------
+		// bracketSpacing
+		// --------------------------------------------------------------------
+		//
+		// @param {bool} "prettier_options.bracketSpacing"
+		// @default true
+		//
+		// Controls the printing of spaces inside array and objects.
+		// --------------------------------------------------------------------
+
+		"bracketSpacing": true,
+
+		// --------------------------------------------------------------------
+		// jsxBracketSameLine
+		// --------------------------------------------------------------------
+		//
+		// @param {bool} "prettier_options.jsxBracketSameLine"
+		// @default false
+		//
+		// If true, puts the `>` of a multi-line jsx element at the end of
+		// the last line instead of being alone on the next line.
+		// --------------------------------------------------------------------
+
+		"jsxBracketSameLine": false,
+
+		// --------------------------------------------------------------------
+		// parser
+		// --------------------------------------------------------------------
+		//
+		// @param {string} "prettier_options.parser"
+		// @default "babylon"
+		//
+		// Which parser to use. Valid options are "flow", "babylon",
+		// "typescript", "css", "json", "graphql", "markdown" and "yaml".
+		//
+		// NOTE: The `parser` option is automatically set by the plug-in
+		// (JsPrettier), based on the contents of current file or selection.
+		// --------------------------------------------------------------------
+
+		"parser": "babylon",
+
+		// --------------------------------------------------------------------
+		// semi
+		// --------------------------------------------------------------------
+		//
+		// @param {bool} "prettier_options.semi"
+		// @default true
+		//
+		// Whether to add a semicolon at the end of every line (semi: true), or
+		// only at the beginning of lines that may introduce ASI failures (semi: false)
+		// --------------------------------------------------------------------
+
+		"semi": true,
+
+		// --------------------------------------------------------------------
+		// requirePragma
+		// --------------------------------------------------------------------
+		//
+		// @param {bool} "prettier_options.requirePragma"
+		// @default false
+		//
+		// Prettier can restrict itself to only format files that contain a
+		// special comment, called a pragma, at the top of the file. This is
+		// very useful when gradually transitioning large, unformatted codebases
+		// to prettier.
+		// --------------------------------------------------------------------
+
+		"requirePragma": false,
+
+		// --------------------------------------------------------------------
+		// proseWrap
+		// --------------------------------------------------------------------
+		//
+		// @param {string} "prettier_options.proseWrap"
+		// @default "preserve"
+		//
+		// (Markdown and YAML Only) By default, Prettier will wrap markdown text
+		// as-is since some services use a linebreak-sensitive renderer, e.g.
+		// GitHub comment and BitBucket. In some cases you may want to rely on
+		// SublimeText soft wrapping instead, so this option allows you to opt
+		// out with "never".
+		//
+		// Valid options:
+		//
+		// "always" - Wrap prose if it exceeds the print width.
+		// "never" - Do not wrap prose.
+		// "preserve" (default) - Wrap prose as-is. available in v1.9.0+
+		// --------------------------------------------------------------------
+
+		"proseWrap": "preserve",
+
+		// --------------------------------------------------------------------
+		// arrowParens
+		// --------------------------------------------------------------------
+		//
+		// @param {string} "prettier_options.arrowParens"
+		// @default "avoid"
+		//
+		// Include parentheses around a sole arrow function parameter.
+		//
+		// Valid Options:
+		//
+		// - "avoid" (default) - Omit parentheses when possible. Example: `x => x`
+		// - "always" - Always include parentheses. Example: `(x) => x`
+		// --------------------------------------------------------------------
+
+		"arrowParens": "avoid",
+
+		// --------------------------------------------------------------------
+		// htmlWhitespaceSensitivity
+		// --------------------------------------------------------------------
+		//
+		// @param {string} "prettier_options.htmlWhitespaceSensitivity"
+		// @default "css"
+		//
+		// Specify the global whitespace sensitivity for HTML files.
+		//
+		// Valid Options:
+		//
+		// - "css" - Respect the default value of CSS display property.
+		// - "strict" - Whitespaces are considered sensitive.
+		// - "ignore" - Whitespaces are considered insensitive.
+		// --------------------------------------------------------------------
+
+		"htmlWhitespaceSensitivity": "css"
+	}
+}

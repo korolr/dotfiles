@@ -1,0 +1,8 @@
+[
+	{ "keys": ["alt+s"], "command": "run_macro_file", "args": {"file": "res://Packages/User/logIt.sublime-macro"} },
+  {
+    "keys": ["alt+e"],
+    "command": "eslint"
+  }
+]
+

@@ -1,0 +1,1 @@
+start powershell -noexit -ExecutionPolicy RemoteSigned "%sublime_terminal_path%\PS.ps1"

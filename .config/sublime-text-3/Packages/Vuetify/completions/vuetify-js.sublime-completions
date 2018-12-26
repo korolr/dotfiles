@@ -1,0 +1,49 @@
+{
+  "scope": ".source.vue",
+
+  "completions": [
+    {
+      "trigger": "vImport\tVuetify import",
+      "contents": "import Vuetify from 'vuetify'"
+    },
+    {
+      "trigger": "vImportCss\tVuetify css import",
+      "contents": "import 'vuetify/dist/vuetify.min.css'"
+    },
+    {
+      "trigger": "bablePolyfillImport\tImport babel-polyfill",
+      "contents": "import 'babel-polyfill'"
+    },
+    {
+      "trigger": "vThemeCreate\tDefine new theme - Vuetify",
+      "contents":
+        "// Helpers\nimport colors from 'vuetify/es5/util/colors'\n\nVue.use(Vuetify, {\n\ttheme: {\n\t\tprimary: colors.${1|red,pink,purple,deep-purple,indigo,blue,light-blue,cyan,teal,green,light-green,lime,yellow,amber,orange,deep-orange,brown,blue-grey,grey|}.${2|base,lighten5,lighten4,lighten3,lighten2,lighten1,darken1,darken2,darken3,darken4,accent1,accent2,accent3,accent4|},\n\t\tsecondary: colors.${3|red,pink,purple,deep-purple,indigo,blue,light-blue,cyan,teal,green,light-green,lime,yellow,amber,orange,deep-orange,brown,blue-grey,grey|}.${4|base,lighten5,lighten4,lighten3,lighten2,lighten1,darken1,darken2,darken3,darken4,accent1,accent2,accent3,accent4|},\n\t\taccent: colors.${5|red,pink,purple,deep-purple,indigo,blue,light-blue,cyan,teal,green,light-green,lime,yellow,amber,orange,deep-orange,brown,blue-grey,grey|}.${6|base,lighten5,lighten4,lighten3,lighten2,lighten1,darken1,darken2,darken3,darken4,accent1,accent2,accent3,accent4|},\n\t\terror: colors.${7|red,pink,purple,deep-purple,indigo,blue,light-blue,cyan,teal,green,light-green,lime,yellow,amber,orange,deep-orange,brown,blue-grey,grey|}.${8|base,lighten5,lighten4,lighten3,lighten2,lighten1,darken1,darken2,darken3,darken4,accent1,accent2,accent3,accent4|}\n\t}\n})$0"
+    },
+    {
+      "trigger": "vThemeMinification\tTheme minification - Vuetify",
+      "contents":
+        "Vue.use(Vuetify, {\n\toptions: {\n\t\tminifyTheme: function () {\n\t\t\treturn process.env.NODE_ENV === 'production'\n\t\t\t\t? val.replace(/[\\s|\r\n|\r|\n]/g, '')\n\t\t\t\t: null\n\t\t}\n\t}\n})$0"
+    },
+    {
+      "trigger": "vThemeCaching\tTheme caching - Vuetify",
+      "contents":
+        "const themeCache = LRU({\n\tmax: 10,\n\tmaxAge: 1000 * 60 * 60 // 1 hour\n})\n\nVue.use(Vuetify, {\n\toptions: {\n\t\tthemeCache\n\t}\n})$0"
+    },
+    {
+      "trigger": "vFormEmailRules\tv-form email rule - Vuetify",
+      "contents":
+        "emailRules: [\n\tv => !!v || 'E-mail is required',\n\tv => /^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,3})+$/.test(v) || 'E-mail must be valid'\n]$0"
+    },
+    {
+      "trigger": "vFormNameRule\tv-form name rule - Vuetify",
+      "contents":
+        "nameRules: [\n\tv => !!v || 'Name is required',\n\tv => v.length <= 10 || 'Name must be less than 10 characters'\n]$0"
+    },
+    {
+      "trigger":
+        "vGridBreakpointObject\tBreakpoing object of Grid system - Vuetify",
+      "contents":
+        "breakpointObject() {\n\t// Use in computed property\n\tswitch (this.$vuetify.breakpoint.name) {\n\t\tcase 'xs': return '220px'\n\t\tcase 'sm': return '400px'\n\t\tcase 'md': return '500px'\n\t\tcase 'lg': return '600px'\n\t\tcase 'xl': return '800px'\n\t}\n}"
+    }
+  ]
+}

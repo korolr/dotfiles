@@ -1,0 +1,7 @@
+# Vuetifyjs Sublime Package Changelog
+
+## 0.2.0 - 2018-04-29
+### Added
+- suggestion for all components when you type `<` (thanks @cb109)
+
+Thank you for using Vuetify Sublime Package. If you like it so far, give it a shoutout anywhere and star the repository and also follow us on Twitter at @vuetifyjs

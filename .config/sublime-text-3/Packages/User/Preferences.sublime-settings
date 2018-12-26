@@ -1,0 +1,54 @@
+{
+	"auto_format_on_save": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/sublime-scheme-alabaster-master/Alabaster.sublime-color-scheme",
+	"dart_sdk_path": "/path/to/dart-sdk",
+	"dpi_scale": 1.35,
+	"draw_white_space": "all",
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.pdf",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.wt",
+		"*.sublime-workspace"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"font_face": "Fira Code",
+	"font_size": 11,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"indent_to_bracket": true,
+	"material_theme_accent_lime": true,
+	"save_on_focus_lost": true,
+	"show_encoding": true,
+	"tab_size": 4,
+	"theme": "Material-Theme-Lighter.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

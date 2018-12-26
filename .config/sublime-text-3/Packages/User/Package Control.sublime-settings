@@ -1,0 +1,42 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"AutoFileName",
+		"AVA",
+		"Babel",
+		"BracketHighlighter",
+		"Color Highlight",
+		"Dart",
+		"EasyMotion",
+		"Emmet",
+		"ESLint",
+		"Flow",
+		"Git",
+		"Git blame",
+		"GitGutter",
+		"JavaScript & Coffeescript Build Systems",
+		"JsPrettier",
+		"Material Color Scheme",
+		"Material Theme",
+		"Neon Color Scheme",
+		"Nunjucks Syntax",
+		"Package Control",
+		"Pug",
+		"Python 3",
+		"Python Breakpoints",
+		"SCSS",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-stylelint",
+		"SublimeLinter-tslint",
+		"Terminal",
+		"TypeScript",
+		"Vuetify"
+	]
+}

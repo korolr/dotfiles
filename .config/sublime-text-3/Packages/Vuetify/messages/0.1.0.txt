@@ -1,0 +1,13 @@
+# Vuetifyjs Sublime Package Changelog
+
+#### 2018-04-18
+
+### Added
+- using completion files
+- full support for completion.
+
+### Removed
+- removed snippet files
+
+
+Thank you for using Vuetify Sublime Package. If you like it so far, give it a shoutout anywhere and star the repository and also follow us on Twitter at @vuetifyjs

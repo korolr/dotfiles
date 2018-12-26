@@ -1,0 +1,39 @@
+[
+	{
+		"caption": "Preferences",
+		"mnemonic": "n",
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "Dart",
+						"children":
+						[
+							{
+								"command": "dart_open_settings",
+								"args": {"kind": "default", "scope": "global"},
+								"caption": "Settings – Default"
+							},
+							{
+								"command": "dart_open_settings",
+								"args": {"kind": "user", "scope": "global"},
+								"caption": "Settings – User"
+							},
+							{
+								"command": "dart_open_settings",
+								"args": {"kind": "user", "scope": "file_type"},
+								"caption": "Settings – File Type (User)"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

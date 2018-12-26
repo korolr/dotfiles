@@ -1,0 +1,12 @@
+[
+	{
+		"caption": "-"
+	},
+	{
+		"caption": "JsPrettier Format Code",
+		"command": "js_prettier"
+	},
+	{
+		"caption": "-"
+	}
+]

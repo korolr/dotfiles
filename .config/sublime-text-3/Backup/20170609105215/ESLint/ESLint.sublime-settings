@@ -1,0 +1,32 @@
+// ESLint' default settings.
+//
+// In order to tweak the settings, you should NOT edit this file, but instead
+// the user-specific, empty-by-default version under
+// "Preferences / Package Settings / ESLint / Settings - User".
+//
+// See ESLint' README for detailed instructions.
+{
+  // The directory location of your `node` executable lives. If this is not
+  // specified, then it is expected to be on Sublime's environment path.
+  //
+  // On OSX, for example: "/usr/local/bin"
+  // Example for nodebrew: "$HOME/.nodebrew/current/bin"
+  // Example for Windows: "C:/Program Files/nodejs"
+  "node_path": "",
+
+  // The directory location of global `node_modules` via `npm`. If this
+  // is not specified, then it is expected to be on system environment
+  // variable `NODE_PATH`.
+  //
+  // On OSX, for example: "/usr/local/lib/node_modules"
+  // Example for nodebrew: "$HOME/.nodebrew/current/lib/node_modules"
+  // Example for Windows: "%APPDATA%/npm/node_modules"
+  "node_modules_path": "",
+
+  // The location of your configuration file.
+  // This option works same as ESLint `-c` option.
+  // This option allows you to specify the location of your `.eslintrc` file
+  //
+  // Example: "/path/to/.eslintrc.js"
+  "config_file": ""
+}

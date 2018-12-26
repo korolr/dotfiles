@@ -1,0 +1,17 @@
+/*Style with current theme.*/
+{%- if var.default_style %}
+{%- if var.sublime_version < 3119 %}
+{{'Packages/mdpopups/css/default-legacy.css'|getcss}}
+{%- else %}
+.mdpopups hr { {{'.foreground'|css('color')|background}} }
+{%- if var.use_pygments %}
+  {%- if var.is_light %}
+{{'default'|pygments}}
+  {%- else %}
+{{'native'|pygments}}
+  {% endif %}
+{%- else %}
+.mdpopups .highlight, .mdpopups .inline-highlight { {{'.background'|css|brightness(0.985)}} }
+{%- endif %}
+{%- endif %}
+{%- endif %}

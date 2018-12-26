@@ -1,0 +1,72 @@
+[
+    {
+        "caption": "Preferences: Terminal Settings – Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/Terminal/Terminal.sublime-settings"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Settings – User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/Terminal.sublime-settings"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/Terminal/Default (Windows).sublime-keymap",
+            "platform": "Windows"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/Terminal/Default (OSX).sublime-keymap",
+            "platform": "OSX"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/Terminal/Default (Linux).sublime-keymap",
+            "platform": "Linux"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/Default (Windows).sublime-keymap",
+            "platform": "Windows"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/Default (OSX).sublime-keymap",
+            "platform": "OSX"
+        }
+    },
+    {
+        "caption": "Preferences: Terminal Key Bindings – User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/Default (Linux).sublime-keymap",
+            "platform": "Linux"
+        }
+    },
+    {
+        "caption": "Terminal: Open",
+        "command": "open_terminal"
+    },
+    {
+        "caption": "Terminal: Open in project folder",
+        "command": "open_terminal_project_folder"
+    }
+]

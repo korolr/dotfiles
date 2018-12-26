@@ -1,0 +1,1 @@
+{"version": "2.6.0", "url": "https://github.com/kylebebak/sublime-jsonschema/issues", "platforms": ["*"], "sublime_text": ">=3000", "description": "An(other) implementation of JSON Schema for Python"}

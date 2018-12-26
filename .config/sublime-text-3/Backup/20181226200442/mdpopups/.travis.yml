@@ -1,0 +1,31 @@
+language: python
+python:
+  - "3.3"
+install:
+  - pip install "flake8<3"
+  - pip install flake8-docstrings
+  - pip install flake8-putty
+  - pip install pep8-naming
+  - pip install mkdocs
+  - pip install mkdocs-material
+  - pip install pymdown-extensions
+  - pip install pygments
+addons:
+  apt:
+    packages:
+      - aspell
+      - aspell-en
+script:
+  - flake8 .
+  - python tests/spellcheck.py
+  - mkdocs build --clean --verbose --strict
+deploy:
+  - provider: pages
+    github_token: $GITHUB_TOKEN
+    name: $GITHUB_USER
+    email: $GITHUB_EMAIL
+    skip_cleanup: true
+    local_dir: site
+    on:
+      tags: true
+      repo: facelessuser/sublime-markdown-popups

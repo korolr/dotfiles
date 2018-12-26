@@ -1,0 +1,81 @@
+site_name: Sublime Markdown Popups Documentation
+repo_url: https://github.com/facelessuser/sublime-markdown-popups
+site_description: Popup tooltips for Sublime generated with Markdown.
+copyright: Copyright &copy; 2015 - 2017 <a href="https://github.com/facelessuser">Isaac Muse</a>
+
+pages:
+  - About Markdown Popups: index.md
+  - Installation: installation.md
+  - User Settings: settings.md
+  - Plugin API: api.md
+  - CSS Styling: styling.md
+  # - TextMate Scopes: textmate_scopes.md
+  - F.A.Q: faq.md
+  - Contributing &amp; Support: contributing.md
+  - Changelog: changelog.md
+  - License: license.md
+
+theme: material
+docs_dir: docs/src/markdown
+theme_dir: docs/theme
+
+markdown_extensions:
+  - markdown.extensions.toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: 
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - pymdownx.betterem:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - pymdownx.extrarawhtml:
+  - pymdownx.superfences:
+  - pymdownx.highlight:
+      css_class: codehilite
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+  - pymdownx.inlinehilite:
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      base_repo_url: https://github.com/facelessuser/sublime-markdown-popups
+  - pymdownx.tilde:
+  - pymdownx.caret:
+  - pymdownx.smartsymbols:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.escapeall:
+      hardbreak: true
+      nbsp: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+  - pymdownx.mark:
+  - pymdownx.plainhtml:
+      strip_attributes: ''
+  - pymdownx.snippets:
+      base_path: docs/src/markdown/_snippets
+  - pymdownx.keys:
+      separator: ＋
+  - pymdownx.spoilers:
+
+extra:
+  palette:
+    primary: blue
+    accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  social:
+    - type: github
+      link: https://github.com/facelessuser
+extra_css:
+  - extra-effadd97dd.css
+extra_javascript:
+  - extra-0d49409391.js

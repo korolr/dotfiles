@@ -1,0 +1,62 @@
+/* TODO: next beta remove checks for 3119. */
+{%- if var.default_formatting %}
+{%- if var.sublime_version < 3119 %}
+{{'Packages/mdpopups/css/base-legacy.css'|getcss}}
+{%- else %}
+html, body { padding: 0; margin: 0; }
+div.mdpopups {
+  display: block;
+  margin: 0;
+  padding: {% if var.is_popup %}0.2rem{% else %}0{% endif %};
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+.mdpopups div { display: block; }
+/* Headers */
+.mdpopups h1 { font-size: 1.5rem; }
+.mdpopups h2 { font-size: 1.4rem; }
+.mdpopups h3 { font-size: 1.3rem; }
+.mdpopups h4 { font-size: 1.2rem; }
+.mdpopups h5 { font-size: 1.1rem; }
+.mdpopups h6 { font-size: 1rem; }
+.mdpopups h1, .mdpopups h2, .mdpopups h3, .mdpopups h4, .mdpopups h5, .mdpopups h6 {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+/* Blockquote support. */
+.mdpopups blockquote { display: block; font-style: italic; }
+/* Horizontal rule support. */
+.mdpopups hr {
+    display: block;
+    padding: 1px;
+    margin: 1rem;
+}
+/* Description list support */
+.mdpopups dl { display: block; }
+.mdpopups dt {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.mdpopups dd {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+/* Preformatted block */
+.mdpopups pre { display: block; }
+/* Blocks */
+.mdpopups blockquote, .mdpopups ol, .mdpopups ul, .mdpopups dl, .mdpopups p, .mdpopups div {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+.mdpopups ul, .mdpopups ol { padding-left: 2rem; }
+/* Special classes */
+.mdpopups .highlight { padding: 0.5rem; }
+.mdpopups .admonition { padding: 0.5rem; }
+{% endif %}
+{% endif %}

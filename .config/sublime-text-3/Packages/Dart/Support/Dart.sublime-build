@@ -1,0 +1,27 @@
+{
+    "file_regex": "(\\S*):(\\d*):(\\d*): (.*)",
+    "selector": "source.dart",
+    "working_dir": "${project_path:${folder}}",
+
+    "variants": [
+        {
+            "name": "Dart: pub build",
+            "target": "dart_pub_build",
+            "working_dir": "$project_path"
+        },
+
+        {
+            "cmd": ["dart2js", "--minify", "-o$file.js", "$file"],
+            "name": "Dart: dart2js",
+
+            "windows":
+            {
+                "cmd": ["dart2js.bat", "--minify", "-o$file.js", "$file"]
+            },
+            "osx":
+            {
+                "cmd": ["/bin/bash", "--login", "-c", "dart2js --minify -o$file.js $file"]
+            }
+        }
+    ]
+}
