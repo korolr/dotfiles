@@ -64,8 +64,8 @@ local chosen_theme = "powerarrow-dark"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "terminator"
-local editor       = "nvim-gtk"
-local gui_editor   = "nautilus"
+local editor       = "nvim"
+local gui_editor   = "subl3"
 local browser      = "firefox"
 local filebrowser      = "nautilus"
 
@@ -76,7 +76,7 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "WEB", "WORK", "CODE", "IM", "MUSIC" }
+awful.util.tagnames = { "WEB", "WORK", "CODE", "TERMINAL", "IM", "MUSIC", "GIT"  }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
