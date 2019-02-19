@@ -221,6 +221,7 @@ manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
 -- Startup Hook {{{
 myStartupHook = do
   spawnOnce "feh --bg-fill $HOME/.xmonad/background.png"
+  spawnOnce "xsetroot -cursor_name left_ptr"
   spawnOnce "compton --config /dev/null -bGC \
             \ --focus-exclude \"class_g = 'Dmenu'\" \
             \ --inactive-dim 0.2 "
