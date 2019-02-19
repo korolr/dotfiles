@@ -226,7 +226,6 @@ myStartupHook = do
             \ --focus-exclude \"class_g = 'Dmenu'\" \
             \ --inactive-dim 0.2 "
   spawnOnce "sleep 1.0 && setxkbmap -option"
-  spawnOnce "sleep 1.0 && setxkbmap -option 'caps:swapescape'"
   spawnOnce "sleep 1.0 && setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,grp_led:scroll"
   spawnOnce "xclip"
   spawnOnce "terminator"
