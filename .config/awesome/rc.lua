@@ -65,8 +65,8 @@ local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "terminator"
 local editor       = "nvim"
-local gui_editor   = "subl3"
-local browser      = "firefox"
+local gui_editor   = "code-insiders"
+local browser      = "google-chrome-stable"
 local filebrowser      = "nautilus"
 
 lain.layout.cascade.tile.offset_x      = 2
@@ -432,6 +432,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "e", function () awful.spawn(gui_editor) end),
     awful.key({ modkey }, "q", function () awful.spawn(browser) end),
     awful.key({ modkey }, "n", function () awful.spawn(filebrowser) end),
+    awful.key({ modkey }, "F3", function () awful.spawn("light -A 10") end),
+    awful.key({ modkey }, "F4", function () awful.spawn("light -U 10") end),
+    awful.key({ modkey }, "F10", function () awful.spawn("amixer -D pulse sset Master 5%-") end),
+    awful.key({ modkey }, "F11", function () awful.spawn("amixer -D pulse sset Master 5%+") end),
 
     -- Default
     --[[ Menubar
