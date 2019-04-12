@@ -306,7 +306,11 @@ globalkeys = awful.util.table.join(
             end
         end
     end),
-
+	
+    awful.key({ modkey, "Control"    }, "Right",     function () awful.tag.incmwfact( 0.01)    end),
+    awful.key({ modkey, "Control"    }, "Left",     function () awful.tag.incmwfact(-0.01)    end),
+    awful.key({ modkey, "Control"    }, "Down",     function () awful.client.incwfact( 0.01)    end),
+    awful.key({ modkey, "Control"    }, "Up",     function () awful.client.incwfact(-0.01)    end),
     -- On the fly useless gaps change
     awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end),
     awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end),
