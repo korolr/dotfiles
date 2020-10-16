@@ -66,7 +66,7 @@ local altkey       = "Mod1"
 local terminal     = "terminator"
 local editor       = "nvim"
 local gui_editor   = "code-insiders"
-local browser      = "google-chrome-stable"
+local browser      = "brave"
 local filebrowser      = "nautilus"
 
 lain.layout.cascade.tile.offset_x      = 2
